@@ -2,10 +2,36 @@ import React from 'react';
 import {withTracker} from 'meteor/react-meteor-data';
 
 class WorkAdd extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+
+        this.state = {
+            organization_name: '',
+            position:          '',
+            begin_at:          '',
+            begin_comment:     '',
+            end_at:            '',
+            end_comment:       ''
+        };
+    }
+
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div>
-                <h1>Work add</h1>
+                <h1>Добавление записи о работе</h1>
 
                 <form action="">
                     <div className="form-group">

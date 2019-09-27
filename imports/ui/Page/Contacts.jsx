@@ -6,7 +6,7 @@ import {DateTime} from 'luxon';
 import Contacts from '../../api/contacts.js';
 import {withTracker} from 'meteor/react-meteor-data';
 
-class ContactPage extends React.Component {
+class Contacts extends React.Component {
     constructor(props) {
         super(props);
 
@@ -90,4 +90,4 @@ export default withTracker(() => {
     return {
         contacts: Contacts.find({}, {sort: {createdAt: -1}}).fetch()
     };
-})(ContactPage);
+})(Contacts);

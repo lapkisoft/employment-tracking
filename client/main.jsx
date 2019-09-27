@@ -1,12 +1,12 @@
 import React from 'react';
 import {Meteor} from 'meteor/meteor';
 import {render} from 'react-dom';
-import App from '../imports/ui/App.jsx';
+import Router from '../imports/ui/Router.jsx';
 
 import {Settings as LuxonSettings} from 'luxon';
 
 LuxonSettings.defaultLocale = 'ru';
 
 Meteor.startup(() => {
-    render(<App/>, document.getElementById('app'));
+    render(<Router/>, document.getElementById('app'));
 });

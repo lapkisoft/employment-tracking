@@ -10,6 +10,7 @@ import PageEmployer from './Page/Employer/Index.jsx';
 import PageUniversity from './Page/University/Index.jsx';
 import PageGovernment from './Page/Government/Index.jsx';
 import PagePerson from './Page/Person/Index.jsx';
+import PageAddEducation from './Page/AddEducationForm/Index.jsx';
 
 class App extends React.Component {
     constructor(props) {
@@ -30,6 +31,7 @@ class App extends React.Component {
                     <Route path="/university" component={PageUniversity}/>
                     <Route path="/government" component={PageGovernment}/>
                     <Route path="/person" component={PagePerson}/>
+                    <Route path="/add-education" component={PageAddEducation}/>
 
                     <Route path="" component={PageError}/>
                 </Switch>

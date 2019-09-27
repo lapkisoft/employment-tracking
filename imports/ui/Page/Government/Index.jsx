@@ -6,7 +6,7 @@ export default class extends React.Component {
     render() {
         return (
             <div>
-                <h1>Правительство</h1>
+                <h1>Министерство образования</h1>
             </div>
         );
     }

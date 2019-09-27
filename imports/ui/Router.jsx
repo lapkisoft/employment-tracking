@@ -5,6 +5,7 @@ import {withTracker} from 'meteor/react-meteor-data';
 
 import PageIndex from './Page/Index.jsx';
 import PageError from './Page/Error.jsx';
+import PageAuth from './Page/Auth.jsx';
 import PageEmployer from './Page/Employer/Index.jsx';
 import PageUniversity from './Page/University/Index.jsx';
 import PageGovernment from './Page/Government/Index.jsx';
@@ -22,6 +23,8 @@ class App extends React.Component {
             <Router>
                 <Switch>
                     <Route path="/" exact component={PageIndex}/>
+
+                    <Route path="/auth" component={PageAuth}/>
 
                     <Route path="/employer" component={PageEmployer}/>
                     <Route path="/university" component={PageUniversity}/>

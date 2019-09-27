@@ -13,6 +13,10 @@ Meteor.startup(() => {
             code: 'RU',
             name: 'Российская Федерация'
         });
+        Countries.insert({
+            code: 'KZ',
+            name: 'Казахстан'
+        });
     }
 
     if (Cities.find().count() === 0) {
@@ -20,6 +24,11 @@ Meteor.startup(() => {
             code:         'KZN',
             country_code: 'RU',
             name:         'Казань'
+        });
+        Cities.insert({
+            code:         'NUR',
+            country_code: 'KZ',
+            name:         'Нурсултан'
         });
     }
 
@@ -29,6 +38,12 @@ Meteor.startup(() => {
             country_code: 'RU',
             city_code:    'KZN',
             name:         'Казанский федеральный университет'
+        });
+        Universities.insert({
+            code:         'NAZARBAEV_UNIVERSITY',
+            country_code: 'KZ',
+            city_code:    'NUR',
+            name:         'Назарбаев университет'
         });
     }
 });

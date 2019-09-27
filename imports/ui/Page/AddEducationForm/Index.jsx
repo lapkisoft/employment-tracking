@@ -7,6 +7,9 @@ class AddEducationForm extends Component {
   constructor(props) {
     super(props);
  
+    this.handleCountryChange = this.handleCountryChange.bind(this);
+    this.handleCityChange = this.handleCityChange.bind(this);
+
     this.state = {
       selectedCountry: "",
       selectedCity: ""
@@ -16,7 +19,7 @@ class AddEducationForm extends Component {
   renderCountryOptions() {
     return this.props.countries.map((country) => {
       return (
-        <option key={country._id} value={country._id}>{country.name}</option>
+        <option key={country._id} value={country.code}>{country.name}</option>
       );
     });
   }
@@ -25,19 +28,21 @@ class AddEducationForm extends Component {
     this.setState({
       selectedCountry: e.target.value
     });
-
-    this.props.cities = Cities.find({country: selectedCountry}).fetch();
   }
 
   renderCityOptions() {
-    return this.props.cities.map((country) => {
+    let filteredCities = this.props.cities.filter((city) => {
+      return city.country_code === this.state.selectedCountry;
+    });
+
+    return filteredCities.map((country) => {
       return (
         <option key={country._id} value={country._id}>{country.name}</option>
       );
     });
   }
 
-  handleCountryChange(e) {
+  handleCityChange(e) {
     this.setState({
       selectedCity: e.target.value
     });
@@ -48,17 +53,23 @@ class AddEducationForm extends Component {
       <div>
           <h1>Высшее образование</h1>
           <form>
+            <div>
               <label htmlFor="country">Страна: </label>
               <select id="country" onChange={this.handleCountryChange}>
                   <option value="">Выберите страну...</option>
                   {this.renderCountryOptions()}
               </select>
+            </div>
+              {this.state.selectedCountry != "" ? (
+              <div>
+                <label htmlFor="city" onChange={this.handleCityChange}>Город: </label>
+                <select id="city">
+                  <option value="">Выберите город...</option>
+                    {this.renderCityOptions()}
+                </select>
+              </div>) : ""}
               <br/>
-              <label htmlFor="city" onChange={this.handleCityChange}>Город: </label>
-              <select id="city">
-                <option value="">Выберите город...</option>
-                  {this.renderCityOptions()}
-              </select>
+              <input type="submit" value="Добавить"/>
           </form>
       </div>
     );

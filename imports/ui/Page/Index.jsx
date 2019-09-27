@@ -10,10 +10,10 @@ export default class extends React.Component {
 
                 <ul>
                     <li>
-                        <Link to="/customer">Заказчик</Link>
+                        <Link to="/employer">Заказчик</Link>
                     </li>
                     <li>
-                        <Link to="/education">ВУЗ</Link>
+                        <Link to="/university">ВУЗ</Link>
                     </li>
                     <li>
                         <Link to="/government">Правительство</Link>

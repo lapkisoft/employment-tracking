@@ -9,14 +9,26 @@ import Universities from '../imports/api/universities.js';
 
 Meteor.startup(() => {
     if (Countries.find().count() === 0) {
-        Countries.insert({code: 'RU', name: 'Российская Федерация'});
+        Countries.insert({
+            code: 'RU',
+            name: 'Российская Федерация'
+        });
     }
 
     if (Cities.find().count() === 0) {
-        Cities.insert({code: 'KZN', country_code: 'RU', name: 'Казань'});
+        Cities.insert({
+            code:         'KZN',
+            country_code: 'RU',
+            name:         'Казань'
+        });
     }
 
     if (Universities.find().count() === 0) {
-        Universities.insert({country_code: 'RU', city_code: 'KZN', name: 'Казанский федеральный университет'});
+        Universities.insert({
+            code:         'KZN_FEDERAL_UNIVERSITY',
+            country_code: 'RU',
+            city_code:    'KZN',
+            name:         'Казанский федеральный университет'
+        });
     }
 });

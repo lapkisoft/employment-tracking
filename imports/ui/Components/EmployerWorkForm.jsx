@@ -7,7 +7,6 @@ export default class extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
         this.state = {
@@ -30,10 +29,6 @@ export default class extends React.Component {
         this.setState({
             [name]: date
         });
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
     }
 
     render() {

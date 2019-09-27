@@ -10,7 +10,7 @@ export default class extends React.Component {
 
                 <ul>
                     <li>
-                        <Link to="/employer">Заказчик</Link>
+                        <Link to="/employer">Работодатель</Link>
                     </li>
                     <li>
                         <Link to="/university">ВУЗ</Link>
@@ -19,7 +19,7 @@ export default class extends React.Component {
                         <Link to="/government">Правительство</Link>
                     </li>
                     <li>
-                        <Link to="/person">Персонаж</Link>
+                        <Link to="/person">Соискатель</Link>
                     </li>
                 </ul>
             </div>

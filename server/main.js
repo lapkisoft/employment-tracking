@@ -6,6 +6,7 @@ import Education from '../imports/api/education.js';
 import Faculties from '../imports/api/faculties.js';
 import Specialties from '../imports/api/specialties.js';
 import Universities from '../imports/api/universities.js';
+import Works from '../imports/api/works.js';
 
 Meteor.startup(() => {
     if (Countries.find().count() === 0) {

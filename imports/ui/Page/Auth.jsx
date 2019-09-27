@@ -11,7 +11,7 @@ export default class extends React.Component {
 
         this.state = {
             login:    '',
-            password: ''
+            password: '112233'
         };
     }
 
@@ -49,7 +49,7 @@ export default class extends React.Component {
                 <form action="" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="auth-form-login-input">Логин</label>
-                        <select id="auth-form-login-input" name="login" onChange={this.handleChange}>
+                        <select id="auth-form-login-input" name="login" onChange={this.handleChange} value={this.state.login}>
                             <option value="">Выберите роль пользователя</option>
                             <option value="employer">Работодатель "Рога и Копыта"</option>
                             <option value="university">ВУЗ</option>
@@ -60,7 +60,13 @@ export default class extends React.Component {
 
                     <div className="form-group">
                         <label htmlFor="auth-form-password-input">Пароль</label>
-                        <input id="auth-form-password-input" type="password" name="password" onChange={this.handleChange} required/>
+                        <input
+                            id="auth-form-password-input"
+                            type="password"
+                            name="password"
+                            onChange={this.handleChange}
+                            value={this.state.password}
+                            required/>
                     </div>
 
                     <div className="form-controls">

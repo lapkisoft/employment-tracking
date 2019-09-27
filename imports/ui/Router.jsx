@@ -7,7 +7,7 @@ import PageIndex from './Page/Index.jsx';
 import PageError from './Page/Error.jsx';
 import PageAuth from './Page/Auth.jsx';
 import PageEmployer from './Page/Employer/Index.jsx';
-import PageEmployerWorkAdd from './Page/Employer/WorkAdd.jsx';
+import PageEmployerWorkCreate from './Page/Employer/WorkCreate.jsx';
 import PageUniversity from './Page/University/Index.jsx';
 import PageGovernment from './Page/Government/Index.jsx';
 import PagePerson from './Page/Person/Index.jsx';
@@ -29,7 +29,7 @@ class App extends React.Component {
                     <Route path="/auth" component={PageAuth}/>
 
                     <Route path="/employer" exact component={PageEmployer}/>
-                    <Route path="/employer/work-add" component={PageEmployerWorkAdd}/>
+                    <Route path="/employer/work-create" component={PageEmployerWorkCreate}/>
 
                     <Route path="/university" component={PageUniversity}/>
                     <Route path="/government" component={PageGovernment}/>

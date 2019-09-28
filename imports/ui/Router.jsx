@@ -16,7 +16,6 @@ import PageEmployerView from './Page/Employer/View.jsx';
 import PagePersonList from './Page/Person/List.jsx';
 import PagePersonView from './Page/Person/View.jsx';
 import PieChart from './Chart/Pie/Index.jsx';
-import {Events} from '../api/events.js'
 
 class AppRouter extends React.Component {
     constructor(props) {
@@ -63,8 +62,6 @@ class AppRouter extends React.Component {
                 }
             ]
         };
-        let test = Events.find().fetch().indexOf(0);
-        console.log(test);
 
         return (
             <Router>
@@ -72,7 +69,7 @@ class AppRouter extends React.Component {
                     <nav>
                         <ul>
                             <li className="logo">
-                                <Link to={test}>megaproject Х</Link>
+                                <Link to="/">megaproject Х</Link>
                             </li>
 
                             <li>

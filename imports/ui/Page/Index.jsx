@@ -46,6 +46,12 @@ export default class extends React.Component {
                     <li><a href="#" onClick={this.authPerson}>Кабинет соискателя</a></li>
                     <li><a href="#" onClick={this.authEmployer}>Кабинет работодателя</a></li>
                     <li><a href="#" onClick={this.authEducation}>Кабинет ВУЗа</a></li>
+                    <li><Link to="/education">Education list</Link></li>
+                    <li><Link to="/education/view">Education view</Link></li>
+                    <li><Link to="/employer">Employer list</Link></li>
+                    <li><Link to="/employer/view">Employer view</Link></li>
+                    <li><Link to="/person">Person list</Link></li>
+                    <li><Link to="/person/view">Person view</Link></li>
                 </ul>
             </div>
         );

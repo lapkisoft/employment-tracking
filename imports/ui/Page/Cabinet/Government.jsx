@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PageGovernmentIndex extends React.Component {
+class PageGovernment extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,4 +16,4 @@ class PageGovernmentIndex extends React.Component {
     }
 }
 
-export default PageGovernmentIndex;
+export default PageGovernment;

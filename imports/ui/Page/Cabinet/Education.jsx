@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PageEducationIndex extends React.Component {
+class PageEducation extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,4 +16,4 @@ class PageEducationIndex extends React.Component {
     }
 }
 
-export default PageEducationIndex;
+export default PageEducation;

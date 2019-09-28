@@ -5,7 +5,7 @@ import HH from '../../../api/head-hunter.js';
 
 import {withTracker} from 'meteor/react-meteor-data';
 
-class EmployerIndexPage extends React.Component {
+class PageEmployer extends React.Component {
     constructor(props) {
         super(props);
 
@@ -34,4 +34,4 @@ class EmployerIndexPage extends React.Component {
 
 export default withTracker(() => {
     return {};
-})(EmployerIndexPage);
+})(PageEmployer);

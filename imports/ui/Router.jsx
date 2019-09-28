@@ -12,6 +12,7 @@ import PageEmployerWorkUpdate from './Page/Employer/WorkUpdate.jsx';
 import PageUniversity from './Page/University/Index.jsx';
 import PageGovernment from './Page/Government/Index.jsx';
 import PagePerson from './Page/Person/Index.jsx';
+import PagePersonSettings from './Page/Person/Settings.jsx';
 import PageAddEducation from './Page/AddEducationForm/Index.jsx';
 
 class App extends React.Component {
@@ -35,7 +36,10 @@ class App extends React.Component {
 
                     <Route path="/university" component={PageUniversity}/>
                     <Route path="/government" component={PageGovernment}/>
-                    <Route path="/person" component={PagePerson}/>
+
+                    <Route path="/person" exact component={PagePerson}/>
+                    <Route path="/person/settings" exact component={PagePersonSettings}/>
+
                     <Route path="/add-education" component={PageAddEducation}/>
 
                     <Route path="" component={PageError}/>

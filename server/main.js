@@ -1,4 +1,9 @@
 import {Meteor} from 'meteor/meteor';
+import Specialties from '../imports/api/specialties.js';
+import WorkExperience from '../imports/api/workExperience.js';
+import Skills from '../imports/api/skills.js';
+import Cities from '../imports/api/cities.js';
+import Competitions from '../imports/api/competitions.js';
 
 Meteor.startup(() => {
     if (Meteor.users.find().count() === 0) {
@@ -37,6 +42,114 @@ Meteor.startup(() => {
             profile:  {
                 role: 'government'
             }
+        });
+    }
+
+    if (Specialties.find().count() === 0) {
+        Specialties.insert({
+            code: '38.04.08',
+            name: 'Финансы и кредит'
+        });
+
+        Specialties.insert({
+            code: '09.03.02',
+            name: 'Информационные системы и технологии'
+        });
+
+        Specialties.insert({
+            code: '38.03.02',
+            name: 'Менеджмент'
+        });
+
+        Specialties.insert({
+            code: '56.04.12',
+            name: 'Военное и административное управление'
+        });
+    }
+
+    if (WorkExperience.find().count() === 0) {
+        WorkExperience.insert({
+            code: '0',
+            name: 'Без опыта'
+        });
+
+        WorkExperience.insert({
+            code: '1-3',
+            name: 'От 1 года до 3 лет'
+        });
+
+        WorkExperience.insert({
+            code: '3-6',
+            name: 'От 3 до 6 лет'
+        });
+
+        WorkExperience.insert({
+            code: '6+',
+            name: 'Более 6 лет'
+        });
+    }
+
+    if (Skills.find().count() === 0) {
+        Skills.insert({
+            code: 'ux',
+            name: 'UX'
+        });
+
+        Skills.insert({
+            code: 'html',
+            name: 'HTML'
+        });
+
+        Skills.insert({
+            code: 'css',
+            name: 'CSS'
+        });
+
+        Skills.insert({
+            code: 'js',
+            name: 'JavaScript'
+        });
+    }
+
+    if (Cities.find().count() === 0) {
+        Cities.insert({
+            code: 'NSK',
+            name: 'Новосибирск'
+        });
+
+        Cities.insert({
+            code: 'KZN',
+            name: 'Казань'
+        });
+
+        Cities.insert({
+            code: 'MSC',
+            name: 'Москва'
+        });
+
+        Cities.insert({
+            code: 'SPB',
+            name: 'Санкт-Петербург'
+        });
+    }
+
+    if (Competitions.find().count() === 0) {
+        Competitions.insert({
+            code: 'CP',
+            name: 'Цифровой прорыв',
+            date: new Date(2019, 8, 27)
+        });
+
+        Competitions.insert({
+            code: 'RL',
+            name: 'Лидеры России',
+            date: new Date(2019, 2, 17)
+        });
+
+        Competitions.insert({
+            code: 'FB',
+            name: 'Мой первый бизнес',
+            date: new Date(2018, 11, 11)
         });
     }
 });

@@ -3,7 +3,11 @@ import Specialties from '../imports/api/specialties.js';
 import WorkExperience from '../imports/api/workExperience.js';
 import Skills from '../imports/api/skills.js';
 import Cities from '../imports/api/cities.js';
-import Competitions from '../imports/api/competitions.js';
+import Events from '../imports/api/events.js';
+
+import YAPimg from '../client/img/yap.png';
+import RLimg from '../client/img/rl.png';
+import CPimg from '../client/img/cp.jpg';
 
 Meteor.startup(() => {
     if (Meteor.users.find().count() === 0) {
@@ -137,19 +141,27 @@ Meteor.startup(() => {
         Competitions.insert({
             code: 'CP',
             name: 'Цифровой прорыв',
+            description: 'Самый большой хакатон в мире!',
+            img: {CPimg},
             date: new Date(2019, 8, 27)
         });
 
         Competitions.insert({
             code: 'RL',
             name: 'Лидеры России',
+            description: 'Открытый конкурс руководителей нового поколения',
+            img: {RLimg},
             date: new Date(2019, 2, 17)
         });
 
         Competitions.insert({
-            code: 'FB',
-            name: 'Мой первый бизнес',
-            date: new Date(2018, 11, 11)
+            code: 'YAP',
+            name: 'Студенческая олимпиада "Я - профессионал"',
+            description: 'Олимпиада дает возможности для развития в лучших вузах страны и открывает перспективы трудоустройства в крупнейшие компании',
+            img: {YAPimg},
+            date: new Date(2019, 6, 10)
         });
+
+
     }
 });

@@ -1,13 +1,10 @@
 import {Meteor} from 'meteor/meteor';
-import Specialties from '../imports/api/specialties.js';
-import WorkExperience from '../imports/api/workExperience.js';
-import Skills from '../imports/api/skills.js';
-import Cities from '../imports/api/cities.js';
-import Events from '../imports/api/events.js';
-
-import YAPimg from '../client/img/yap.png';
-import RLimg from '../client/img/rl.png';
-import CPimg from '../client/img/cp.jpg';
+import {Specialties} from '../imports/api/specialties.js';
+import {WorkExperience} from '../imports/api/workExperience.js';
+import {Skills} from '../imports/api/skills.js';
+import {Cities} from '../imports/api/cities.js';
+import {Events} from '../imports/api/events.js';
+import {Experience} from '../imports/api/experience.js';
 
 Meteor.startup(() => {
     if (Meteor.users.find().count() === 0) {
@@ -137,31 +134,70 @@ Meteor.startup(() => {
         });
     }
 
-    if (Competitions.find().count() === 0) {
-        Competitions.insert({
+    let cpImg = '/img/events/cp.jpg';
+    let rlImg = '/img/events/rl.png';
+    let yapImg = '/img/events/yap.png';
+
+    if (Events.find().count() === 0) {
+        Events.insert({
             code: 'CP',
             name: 'Цифровой прорыв',
             description: 'Самый большой хакатон в мире!',
-            img: {CPimg},
+            img: cpImg,
             date: new Date(2019, 8, 27)
         });
 
-        Competitions.insert({
+        Events.insert({
             code: 'RL',
             name: 'Лидеры России',
             description: 'Открытый конкурс руководителей нового поколения',
-            img: {RLimg},
+            img: rlImg,
             date: new Date(2019, 2, 17)
         });
 
-        Competitions.insert({
+        Events.insert({
             code: 'YAP',
             name: 'Студенческая олимпиада "Я - профессионал"',
             description: 'Олимпиада дает возможности для развития в лучших вузах страны и открывает перспективы трудоустройства в крупнейшие компании',
-            img: {YAPimg},
+            img: yapImg,
             date: new Date(2019, 6, 10)
         });
+    }
 
+    let cpDoc = '/data/experience/cp-doc.pdf';
+    let rtImg = '/img/employers/rostelecom.png'; 
 
+    if (Experience.find().count() === 0) {
+        Experience.insert({
+            name: 'Победитель проекта "Цифровой прорыв 2019"',
+            img: cpImg,
+            type: "event",
+            docs: cpDoc,
+            date: new Date(2019, 8, 29)
+        });
+
+        Experience.insert({
+            name: 'Закончил работать в ПАО "РОСТЕЛЕКОМ"',
+            img: rtImg,
+            type: "dismissal",
+            docs: null,
+            date: new Date(2019, 7, 14)
+        });
+
+        Experience.insert({
+            name: 'Повышение до Middle front-end developer в ПАО "РОСТЕЛЕКОМ"',
+            img: rtImg,
+            type: "work",
+            docs: null,
+            date: new Date(2018, 8, 1)
+        });
+
+        Experience.insert({
+            name: 'Начал работать в ПАО "РОСТЕЛЕКОМ"',
+            img: rtImg,
+            type: "work",
+            docs: null,
+            date: new Date(2017, 7, 29)
+        });
     }
 });

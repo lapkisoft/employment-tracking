@@ -5,6 +5,7 @@ import Countries from '../imports/api/countries.js';
 import Education from '../imports/api/education.js';
 import Specialties from '../imports/api/specialties.js';
 import Universities from '../imports/api/universities.js';
+import Users from '../imports/api/users.js';
 import Works from '../imports/api/works.js';
 
 Meteor.startup(() => {
@@ -47,6 +48,7 @@ Meteor.startup(() => {
         });
     }
 
+
     if (Specialties.find().count() === 0) {
         Specialties.insert({
             code:            '09.03.02',
@@ -57,6 +59,43 @@ Meteor.startup(() => {
             code:            '09.03.02',
             university_code: 'NAZARBAEV_UNIVERSITY',
             name:            'Информационные системы и технологии'
+        });
+    }
+
+    if (Users.find().count() === 0) {
+        Users.insert({
+            id:          'AA000001',
+            first_name:  'Василий',
+            last_name:   'Пупкин',
+            middle_name: 'Петров',
+            birth_date:  new Date(1980, 6, 15)
+        });
+
+        Users.insert({
+            id:          'AA000002',
+            first_name:  'Петя',
+            last_name:   'Жданко',
+            middle_name: 'Михайлович',
+            birth_date:  new Date(1985, 8, 5)
+        });
+
+        Users.insert({
+            id:          'AA000003',
+            first_name:  'Никита',
+            last_name:   'Рогачев',
+            middle_name: 'Станиславович',
+            birth_date:  new Date(1990, 10, 25)
+        });
+    }
+
+    if (Works.find().count() === 0) {
+        Works.insert({
+            id:                'WW0101010',
+            user_id:           'AA000001',
+            organization_name: 'Рога и Копыта',
+            position:          'Водитель автобуса',
+            begin_at:          new Date(2015, 6, 20),
+            begin_comment:     'Хорошие отзывы с предыдущего места работы'
         });
     }
 });

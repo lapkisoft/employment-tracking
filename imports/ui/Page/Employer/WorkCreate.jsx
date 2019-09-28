@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Works from '../../../api/works.js';
 
-import WorkForm from '../../Components/WorkForm.jsx';
+import EmployerWorkForm from '../../Components/EmployerWorkForm.jsx';
 
-export default class extends React.Component {
+export default class EmployerWorkCreatePage extends React.Component {
     constructor(props) {
         super(props);
 
@@ -29,7 +29,7 @@ export default class extends React.Component {
             <div>
                 <h1>Добавление записи о работе</h1>
 
-                <WorkForm onSubmit={this.handleSubmit}/>
+                <EmployerWorkForm onSubmit={this.handleSubmit}/>
             </div>
         );
     }

@@ -131,6 +131,34 @@ class PagePersonView extends React.Component {
                         </ul>
                     </div>
                 </div>
+
+                <div className="person-events">
+                    <h2>Ближайшие события</h2>
+
+                    <ul>
+                        <li>
+                            <div className="img-wrapper">
+                                <img src="/img/events/01.png" alt=""/>
+                            </div>
+                            <h4>Студенческая олимпиада «Я — профессионал»</h4>
+                            <p>Олимпиада дает возможности для развития в лучших вузах страны и открывает перспективы трудоустройства в крупнейшие компании</p>
+                        </li>
+                        <li>
+                            <div className="img-wrapper">
+                                <img src="/img/events/02.png" alt=""/>
+                            </div>
+                            <h4>«Лучший социальный проект года»</h4>
+                            <p>Проект нацелен на популяризацию социального предпринимательства</p>
+                        </li>
+                        <li>
+                            <div className="img-wrapper">
+                                <img src="/img/events/03.png" alt=""/>
+                            </div>
+                            <h4>«Доброволец России»</h4>
+                            <p>Всероссийский конкурс лучших добровольческих инициатив</p>
+                        </li>
+                    </ul>
+                </div>
             </section>
         );
     }

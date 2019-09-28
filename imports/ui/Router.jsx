@@ -112,6 +112,16 @@ class AppRouter extends React.Component {
                         <Route path="/pie" exact render={() => <PieChart chartData={chartData}/>}/>
                     </Switch>
                 </main>
+
+                <footer>
+                    <nav>
+                        <Link to="/">
+                            <b>megaproject X</b>
+                            <br/>
+                            <span>2019</span>
+                        </Link>
+                    </nav>
+                </footer>
             </Router>
         );
     }

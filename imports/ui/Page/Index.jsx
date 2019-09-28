@@ -17,7 +17,7 @@ export default class extends React.Component {
         e.preventDefault();
 
         Meteor.loginWithPassword('person', 'person', () => {
-            this.props.history.push('/person');
+            this.props.history.push('/cabinet/person');
         });
     }
 
@@ -25,7 +25,7 @@ export default class extends React.Component {
         e.preventDefault();
 
         Meteor.loginWithPassword('employer', 'employer', () => {
-            this.props.history.push('/employer');
+            this.props.history.push('/cabinet/employer');
         });
     }
 
@@ -33,7 +33,7 @@ export default class extends React.Component {
         e.preventDefault();
 
         Meteor.loginWithPassword('education', 'education', () => {
-            this.props.history.push('/education');
+            this.props.history.push('/cabinet/education');
         });
     }
 

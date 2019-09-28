@@ -29,5 +29,14 @@ Meteor.startup(() => {
                 role: 'education'
             }
         });
+
+        Accounts.createUser({
+            username: 'government',
+            password: 'government',
+            email:    'government@test.com',
+            profile:  {
+                role: 'government'
+            }
+        });
     }
 });

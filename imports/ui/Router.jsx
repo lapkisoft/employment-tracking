@@ -1,30 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import {Accounts} from 'meteor/accounts-base';
 import {withTracker} from 'meteor/react-meteor-data';
 
 import PageIndex from './Page/Index.jsx';
-import PagePersonIndex from './Page/Person/Index.jsx';
-import PageEducationIndex from './Page/Education/Index.jsx';
-import PageEmployerIndex from './Page/Employer/Index.jsx';
-import PageGovernmentIndex from './Page/Government/Index.jsx';
+import PageCabinetPerson from './Page/Cabinet/Person.jsx';
+import PageCabinetEducation from './Page/Cabinet/Education.jsx';
+import PageCabinetEmployer from './Page/Cabinet/Employer.jsx';
+import PageCabinetGovernment from './Page/Cabinet/Government.jsx';
 
 class AppRouter extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            user: Accounts.user()
+        };
     }
 
     render() {
+        let role = this.state.user && this.state.user.profile.role;
+
         return (
             <Router>
                 <Switch>
                     <Route path="/" exact component={PageIndex}/>
-                    <Route path="/person" exact component={PagePersonIndex}/>
-                    <Route path="/education" exact component={PageEducationIndex}/>
-                    <Route path="/employer" exact component={PageEmployerIndex}/>
-                    <Route path="/government" exact component={PageGovernmentIndex}/>
+                    <Route path="/cabinet" exact render={(props) => {
+                        let user = Accounts.user();
+
+                        props.history.replace(user && user.profile.role ? `/cabinet/${user.profile.role}` : '/');
+                    }}/>
+                    <Route path="/cabinet/person" component={PageCabinetPerson}/>
+                    <Route path="/cabinet/education" component={PageCabinetEducation}/>
+                    <Route path="/cabinet/employer" component={PageCabinetEmployer}/>
+                    <Route path="/cabinet/government" component={PageCabinetGovernment}/>
                 </Switch>
             </Router>
         );

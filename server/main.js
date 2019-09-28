@@ -3,7 +3,6 @@ import {Meteor} from 'meteor/meteor';
 import Cities from '../imports/api/cities.js';
 import Countries from '../imports/api/countries.js';
 import Education from '../imports/api/education.js';
-import Faculties from '../imports/api/faculties.js';
 import Specialties from '../imports/api/specialties.js';
 import Universities from '../imports/api/universities.js';
 import Works from '../imports/api/works.js';
@@ -45,6 +44,19 @@ Meteor.startup(() => {
             country_code: 'KZ',
             city_code:    'NUR',
             name:         'Назарбаев университет'
+        });
+    }
+
+    if (Specialties.find().count() === 0) {
+        Specialties.insert({
+            code:            '09.03.02',
+            university_code: 'KZN_FEDERAL_UNIVERSITY',
+            name:            'Информационные системы и технологии'
+        });
+        Specialties.insert({
+            code:            '09.03.02',
+            university_code: 'NAZARBAEV_UNIVERSITY',
+            name:            'Информационные системы и технологии'
         });
     }
 });

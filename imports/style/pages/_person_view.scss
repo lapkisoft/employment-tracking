@@ -1,0 +1,381 @@
+.section-person-view {
+    .person-header {
+        display:         flex;
+        position:        relative;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+        justify-content: flex-start;
+        align-items:     flex-start;
+        margin:          0 0 5px;
+        padding:         32px;
+        border-radius:   5px 5px 0 0;
+        background:      #ffffff;
+        box-shadow:      0px 1px 8px rgba(0, 0, 0, 0.15);
+
+        .img-wrapper {
+            width:  150px;
+            height: 150px;
+
+            img {
+                display:         block;
+                width:           100%;
+                height:          100%;
+                object-fit:      contain;
+                object-position: center center;
+                background:      white;
+                box-shadow:      0 0 5px #e0e0e0;
+            }
+        }
+
+        .content {
+            display: block;
+            width:   calc(100% - 150px);
+            padding: 0 0 0 32px;
+
+            h1 {
+                margin:      0;
+                padding:     0;
+                font-size:   32px;
+                font-weight: 400;
+                line-height: 1.2;
+            }
+
+            h3 {
+                margin:      0 0 10px;
+                padding:     0;
+                font-size:   18px;
+                font-weight: 400;
+                line-height: 23px;
+            }
+
+            h4 {
+                margin:      0;
+                padding:     0;
+                font-size:   18px;
+                font-weight: 400;
+                line-height: 23px;
+
+                &.danger {
+                    color: #ad3c32;
+                }
+            }
+
+            .markers {
+                display:         flex;
+                position:        absolute;
+                top:             5px;
+                right:           5px;
+                flex-direction:  row;
+                flex-wrap:       nowrap;
+                justify-content: flex-start;
+                align-items:     center;
+
+                img {
+                    display:         block;
+                    width:           48px;
+                    height:          48px;
+                    object-fit:      scale-down;
+                    object-position: center center;
+                }
+            }
+        }
+    }
+
+    .person-header-controls {
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+        justify-content: space-between;
+        align-items:     center;
+        margin:          0 0 25px;
+        padding:         18px 32px;
+        border-radius:   0 0 5px 5px;
+        background:      white;
+        box-shadow:      0px 1px 8px rgba(0, 0, 0, 0.15);
+
+        .rating {
+            display:         flex;
+            flex-direction:  row;
+            flex-wrap:       nowrap;
+            justify-content: flex-start;
+            align-items:     center;
+
+            small {
+                margin:      0;
+                padding:     0;
+                font-size:   14px;
+                font-weight: 300;
+                line-height: 18px;
+
+                &:after {
+                    content: ':';
+                }
+            }
+
+            span {
+                margin:      0 5px;
+                font-size:   18px;
+                line-height: 23px;
+            }
+
+            &.up {
+                &:after {
+                    content:    '';
+                    display:    block;
+                    width:      14px;
+                    height:     14px;
+                    margin:     0;
+                    padding:    0;
+                    background: url(/img/icons/arrow-rating-up.png);
+                }
+            }
+        }
+
+        a {
+            display:         block;
+            min-width:       280px;
+            margin:          0;
+            padding:         13px 14px 14px;
+            background:      #1e5ca1;
+            border-radius:   5px;
+            text-align:      center;
+            color:           white;
+            font-size:       18px;
+            line-height:     23px;
+            font-weight:     500;
+            text-decoration: none;
+        }
+    }
+
+    .person-dashboard {
+        display:             grid;
+        grid-template-areas: 'timeline education' 'timeline education-additional' 'timeline skills';
+        grid-gap:            10px;
+
+        .plank {
+            background:    white;
+            border-radius: 5px;
+            box-shadow:    0px 1px 8px rgba(0, 0, 0, 0.15);
+            padding:       32px;
+
+            h2 {
+                margin:      0 0 30px;
+                padding:     0;
+                font-size:   28px;
+                font-weight: 400;
+                line-height: 36px;
+            }
+
+            &.timeline {
+                grid-area: timeline;
+
+                ul {
+                    list-style: none;
+                    padding:    0;
+                    margin:     0;
+
+                    > li {
+                        --line-color:    #7701ff;
+
+                        display:         flex;
+                        flex-direction:  row;
+                        flex-wrap:       nowrap;
+                        justify-content: flex-start;
+                        align-items:     center;
+                        margin:          0;
+                        padding:         0;
+
+                        .date {
+                            width:       100px;
+                            font-size:   16px;
+                            line-height: 21px;
+                            color:       #4a4a4a;
+                        }
+
+                        .icon {
+                            display:         flex;
+                            flex-direction:  column;
+                            flex-wrap:       nowrap;
+                            justify-content: center;
+                            align-items:     center;
+                            position:        relative;
+                            width:           80px;
+                            min-height:      100px;
+
+                            img {
+                                display:         block;
+                                position:        relative;
+                                margin:          0 auto;
+                                width:           54px;
+                                height:          54px;
+                                object-position: center center;
+                                object-fit:      scale-down;
+                                border-radius:   50%;
+                                border:          2px solid var(--line-color);
+                                background:      white;
+                                z-index:         2;
+                            }
+                        }
+
+                        .content {
+                            width:       calc(100% - 200px);
+                            font-size:   18px;
+                            line-height: 23px;
+
+                            a {
+                                color:           #4a4a4a;
+                                text-decoration: none;
+                            }
+                        }
+
+                        &:not(:first-child) {
+                            .icon {
+                                &:after {
+                                    content:    '';
+                                    display:    block;
+                                    position:   absolute;
+                                    bottom:     40px;
+                                    left:       calc(50% - 1px);
+                                    width:      2px;
+                                    height:     100%;
+                                    background: var(--line-color);
+                                    z-index:    1;
+                                }
+                            }
+                        }
+
+                        &.dismissal {
+                            --line-color: #cccccc;
+                        }
+                    }
+                }
+            }
+
+            &.education {
+                grid-area: education;
+            }
+
+            &.education-additional {
+                grid-area: education-additional;
+            }
+
+            &.education, &.education-additional {
+                ul {
+                    list-style: none;
+                    padding:    0;
+                    margin:     0;
+
+                    > li {
+                        display:         flex;
+                        flex-direction:  row;
+                        flex-wrap:       nowrap;
+                        justify-content: flex-start;
+                        align-items:     flex-start;
+
+                        .img-wrapper {
+                            width:  40px;
+                            height: 40px;
+
+                            img {
+                                display:         block;
+                                width:           100%;
+                                height:          100%;
+                                object-fit:      scale-down;
+                                object-position: center center;
+                            }
+                        }
+
+                        .content {
+                            width:   calc(100% - 40px);
+                            padding: 0 0 0 15px;
+
+                            h3 {
+                                display:     block;
+                                position:    relative;
+                                margin:      0 0 15px;
+                                padding:     0 30px 0 0;
+                                font-size:   18px;
+                                line-height: 23px;
+
+                                &:after {
+                                    content:    '';
+                                    display:    block;
+                                    position:   absolute;
+                                    top:        0;
+                                    right:      0;
+                                    width:      22px;
+                                    height:     22px;
+                                    background: url(/img/icons/check.png);
+                                }
+                            }
+
+                            h4 {
+                                margin:      0 0 15px;
+                                padding:     0;
+                                font-size:   18px;
+                                font-weight: 500;
+                                line-height: 23px;
+                            }
+
+                            p {
+                                margin:      0;
+                                font-size:   16px;
+                                font-weight: 300;
+                                line-height: 21px;
+
+                                a {
+                                    display:         inline-flex;
+                                    flex-direction:  row;
+                                    flex-wrap:       nowrap;
+                                    justify-content: flex-start;
+                                    align-items:     center;
+                                    font-size:       14px;
+                                    line-height:     18px;
+                                    text-decoration: none;
+                                    font-weight:     500;
+                                    color:           #ad3c32;
+
+                                    &:before {
+                                        content:    '';
+                                        display:    inline-block;
+                                        width:      20px;
+                                        height:     24px;
+                                        margin:     0 8px 0 0;
+                                        background: url(/img/icons/download.png);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.skills {
+                grid-area: skills;
+
+                ul {
+                    display:         flex;
+                    flex-direction:  row;
+                    flex-wrap:       wrap;
+                    justify-content: flex-start;
+                    align-items:     flex-start;
+                    list-style:      none;
+                    margin:          0 -3px;
+                    padding:         0;
+
+                    > li {
+                        min-width:     42px;
+                        margin:        0 3px;
+                        padding:       6px 10px;
+                        border-radius: 30px;
+                        background:    #082c54;
+                        font-size:     14px;
+                        line-height:   18px;
+                        text-align:    center;
+                        color:         white;
+                    }
+                }
+            }
+        }
+    }
+}

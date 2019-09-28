@@ -1,0 +1,45 @@
+.section-education-view {
+    .education-header {
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+        justify-content: flex-start;
+        align-items:     flex-start;
+
+        .img-wrapper {
+            width:  120px;
+            height: 120px;
+
+            img {
+                display:         block;
+                width:           100%;
+                height:          100%;
+                object-fit:      contain;
+                object-position: center center;
+            }
+        }
+
+        .content {
+            padding: 0 0 0 20px;
+
+            h1 {
+                margin:         0 0 15px;
+                padding:        0;
+                font-size:      36px;
+                font-weight:    400;
+                line-height:    1.2;
+                text-transform: uppercase;
+                color:          black;
+            }
+
+            p {
+                margin:      0;
+                padding:     0;
+                font-size:   24px;
+                font-weight: 400;
+                line-height: 1.3;
+                color:       #555555;
+            }
+        }
+    }
+}

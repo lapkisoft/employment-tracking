@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, NavLink as Link, Switch} from 'react-router-dom';
 import {Accounts} from 'meteor/accounts-base';
 import {withTracker} from 'meteor/react-meteor-data';
 
@@ -30,27 +30,51 @@ class AppRouter extends React.Component {
 
         return (
             <Router>
-                <Switch>
-                    <Route path="/" exact component={PageIndex}/>
-                    <Route path="/cabinet" exact render={(props) => {
-                        let user = Accounts.user();
+                <header>
+                    <nav>
+                        <ul>
+                            <li className="logo">
+                                <Link to="/">megaproject Х</Link>
+                            </li>
 
-                        props.history.replace(user && user.profile.role ? `/cabinet/${user.profile.role}` : '/');
-                    }}/>
-                    <Route path="/cabinet/person" component={PageCabinetPerson}/>
-                    <Route path="/cabinet/education" component={PageCabinetEducation}/>
-                    <Route path="/cabinet/employer" component={PageCabinetEmployer}/>
-                    <Route path="/cabinet/government" component={PageCabinetGovernment}/>
+                            <li>
+                                <Link to="/person">Люди</Link>
+                            </li>
 
-                    <Route path="/education" exact component={PageEducationList}/>
-                    <Route path="/education/view" component={PageEducationView}/>
+                            <li>
+                                <Link to="/employer">Организации</Link>
+                            </li>
 
-                    <Route path="/employer" exact component={PageEmployerList}/>
-                    <Route path="/employer/view" component={PageEmployerView}/>
+                            <li>
+                                <Link to="/education">Учебные заведения</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
 
-                    <Route path="/person" exact component={PagePersonList}/>
-                    <Route path="/person/view" component={PagePersonView}/>
-                </Switch>
+                <main>
+                    <Switch>
+                        <Route path="/" exact component={PageIndex}/>
+                        <Route path="/cabinet" exact render={(props) => {
+                            let user = Accounts.user();
+
+                            props.history.replace(user && user.profile.role ? `/cabinet/${user.profile.role}` : '/');
+                        }}/>
+                        <Route path="/cabinet/person" component={PageCabinetPerson}/>
+                        <Route path="/cabinet/education" component={PageCabinetEducation}/>
+                        <Route path="/cabinet/employer" component={PageCabinetEmployer}/>
+                        <Route path="/cabinet/government" component={PageCabinetGovernment}/>
+
+                        <Route path="/education" exact component={PageEducationList}/>
+                        <Route path="/education/view" component={PageEducationView}/>
+
+                        <Route path="/employer" exact component={PageEmployerList}/>
+                        <Route path="/employer/view" component={PageEmployerView}/>
+
+                        <Route path="/person" exact component={PagePersonList}/>
+                        <Route path="/person/view" component={PagePersonView}/>
+                    </Switch>
+                </main>
             </Router>
         );
     }

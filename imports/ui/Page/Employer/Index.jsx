@@ -1,9 +1,7 @@
+import {Meteor} from 'meteor/meteor';
+import {Accounts} from 'meteor/accounts-base';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router} from 'react-router';
-import Users from '../../../api/users.js';
-import Works from '../../../api/works.js';
-import EmployerUser from '../../Components/EmployerUser.jsx';
+import HH from '../../../api/head-hunter.js';
 
 import {withTracker} from 'meteor/react-meteor-data';
 
@@ -11,35 +9,29 @@ class EmployerIndexPage extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
-    }
+        let user = Accounts.user();
 
-    renderEmployerUsers() {
-        return this.props.employerUsers.map((user) => {
-            let work = this.props.employerUserWorks.find((work) => work.user_id === user.id);
+        this.state = {
+            vacancies: []
+        };
 
-            return (
-                <EmployerUser key={user.id} work={work} {...user}/>
-            );
+        HH.vacancies(user && user.profile.hh_profile_id || null).then(data => {
+            this.setState({
+                vacancies: data
+            });
         });
     }
 
     render() {
         return (
             <div>
-                <h1>Работодатель</h1>
-
-                <div className="user-list">
-                    {this.renderEmployerUsers()}
-                </div>
+                <h1>Кабинет работодателя</h1>
+                <pre style={{fontSize: '10px'}}>{JSON.stringify(this.state.vacancies, null, 4)}</pre>
             </div>
         );
     }
 }
 
 export default withTracker(() => {
-    return {
-        employerUsers:     Users.find().fetch(),
-        employerUserWorks: Works.find().fetch()
-    };
+    return {};
 })(EmployerIndexPage);

@@ -1,101 +1,33 @@
 import {Meteor} from 'meteor/meteor';
 
-import Cities from '../imports/api/cities.js';
-import Countries from '../imports/api/countries.js';
-import Education from '../imports/api/education.js';
-import Specialties from '../imports/api/specialties.js';
-import Universities from '../imports/api/universities.js';
-import Users from '../imports/api/users.js';
-import Works from '../imports/api/works.js';
-
 Meteor.startup(() => {
-    if (Countries.find().count() === 0) {
-        Countries.insert({
-            code: 'RU',
-            name: 'Российская Федерация'
-        });
-        Countries.insert({
-            code: 'KZ',
-            name: 'Казахстан'
-        });
-    }
-
-    if (Cities.find().count() === 0) {
-        Cities.insert({
-            code:         'KZN',
-            country_code: 'RU',
-            name:         'Казань'
-        });
-        Cities.insert({
-            code:         'NUR',
-            country_code: 'KZ',
-            name:         'Нурсултан'
-        });
-    }
-
-    if (Universities.find().count() === 0) {
-        Universities.insert({
-            code:         'KZN_FEDERAL_UNIVERSITY',
-            country_code: 'RU',
-            city_code:    'KZN',
-            name:         'Казанский федеральный университет'
-        });
-        Universities.insert({
-            code:         'NAZARBAEV_UNIVERSITY',
-            country_code: 'KZ',
-            city_code:    'NUR',
-            name:         'Назарбаев университет'
-        });
-    }
-
-
-    if (Specialties.find().count() === 0) {
-        Specialties.insert({
-            code:            '09.03.02',
-            university_code: 'KZN_FEDERAL_UNIVERSITY',
-            name:            'Информационные системы и технологии'
-        });
-        Specialties.insert({
-            code:            '09.03.02',
-            university_code: 'NAZARBAEV_UNIVERSITY',
-            name:            'Информационные системы и технологии'
-        });
-    }
-
-    if (Users.find().count() === 0) {
-        Users.insert({
-            id:          'AA000001',
-            first_name:  'Василий',
-            last_name:   'Пупкин',
-            middle_name: 'Петров',
-            birth_date:  new Date(1980, 6, 15)
+    if (Meteor.users.find().count() === 0) {
+        Accounts.createUser({
+            username: 'person',
+            password: 'person',
+            email:    'person@test.com',
+            profile:  {
+                role: 'person'
+            }
         });
 
-        Users.insert({
-            id:          'AA000002',
-            first_name:  'Петя',
-            last_name:   'Жданко',
-            middle_name: 'Михайлович',
-            birth_date:  new Date(1985, 8, 5)
+        Accounts.createUser({
+            username: 'employer',
+            password: 'employer',
+            email:    'employer@test.com',
+            profile:  {
+                role:          'employer',
+                hh_profile_id: 80
+            }
         });
 
-        Users.insert({
-            id:          'AA000003',
-            first_name:  'Никита',
-            last_name:   'Рогачев',
-            middle_name: 'Станиславович',
-            birth_date:  new Date(1990, 10, 25)
-        });
-    }
-
-    if (Works.find().count() === 0) {
-        Works.insert({
-            id:                'WW0101010',
-            user_id:           'AA000001',
-            organization_name: 'Рога и Копыта',
-            position:          'Водитель автобуса',
-            begin_at:          new Date(2015, 6, 20),
-            begin_comment:     'Хорошие отзывы с предыдущего места работы'
+        Accounts.createUser({
+            username: 'education',
+            password: 'education',
+            email:    'education@test.com',
+            profile:  {
+                role: 'education'
+            }
         });
     }
 });

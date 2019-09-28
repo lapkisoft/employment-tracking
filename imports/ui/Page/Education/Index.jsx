@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PagePersonIndex extends React.Component {
+class PageEducationIndex extends React.Component {
     constructor(props) {
         super(props);
 
@@ -10,10 +10,10 @@ class PagePersonIndex extends React.Component {
     render() {
         return (
             <div>
-                <h1>Кабинет соискателя</h1>
+                <h1>ВУЗ</h1>
             </div>
         );
     }
 }
 
-export default PagePersonIndex;
+export default PageEducationIndex;

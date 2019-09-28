@@ -1,8 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router} from 'react-router';
 
-export default class extends React.Component {
+class PageGovernmentIndex extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+    }
+
     render() {
         return (
             <div>
@@ -11,3 +15,5 @@ export default class extends React.Component {
         );
     }
 }
+
+export default PageGovernmentIndex;

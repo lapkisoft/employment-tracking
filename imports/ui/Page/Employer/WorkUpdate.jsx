@@ -17,6 +17,19 @@ class EmployerWorkUpdatePage extends React.Component {
 
     handleSubmit(e, fields) {
         e.preventDefault();
+
+        Works.update({_id: this.props.work._id}, {
+            id:                this.props.work.id,
+            user_id:           this.props.work.user_id,
+            organization_name: fields.organization_name || null,
+            position:          fields.position || null,
+            begin_at:          fields.begin_at || null,
+            begin_comment:     fields.begin_comment || null,
+            end_at:            fields.end_at || null,
+            end_comment:       fields.end_comment || null
+        });
+
+        this.props.history.push('/employer');
     }
 
     render() {
@@ -24,7 +37,7 @@ class EmployerWorkUpdatePage extends React.Component {
             <div>
                 <h1>Редактирование записи о работе</h1>
 
-                <EmployerWorkForm onSubmit={this.handleSubmit}/>
+                {this.props.work && this.props.user ? <EmployerWorkForm onSubmit={this.handleSubmit} {...this.props.work}/> : ''}
             </div>
         );
     }

@@ -10,12 +10,12 @@ export default class extends React.Component {
         this.handleChange = this.handleChange.bind(this);
 
         this.state = {
-            organization_name: '',
-            position:          '',
-            begin_at:          null,
-            begin_comment:     '',
-            end_at:            null,
-            end_comment:       ''
+            organization_name: this.props.organization_name || '',
+            position:          this.props.position || '',
+            begin_at:          this.props.begin_at || null,
+            begin_comment:     this.props.begin_comment || '',
+            end_at:            this.props.end_at || null,
+            end_comment:       this.props.end_comment || ''
         };
     }
 
@@ -36,12 +36,24 @@ export default class extends React.Component {
             <form action="" onSubmit={e => this.props.onSubmit(e, this.state)}>
                 <div className="form-group">
                     <label htmlFor="employer-work-name-input">Наимениование организации</label>
-                    <input id="employer-work-name-input" name="organization_name" type="text" onChange={this.handleChange} required/>
+                    <input
+                        id="employer-work-name-input"
+                        name="organization_name"
+                        value={this.state.organization_name}
+                        type="text"
+                        onChange={this.handleChange}
+                        required/>
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="employer-work-position-input">Должность</label>
-                    <input id="employer-work-position-input" name="position" type="text" onChange={this.handleChange} required/>
+                    <input
+                        id="employer-work-position-input"
+                        name="position"
+                        value={this.state.position}
+                        type="text"
+                        onChange={this.handleChange}
+                        required/>
                 </div>
 
                 <div className="form-group">
@@ -57,7 +69,12 @@ export default class extends React.Component {
 
                 <div className="form-group">
                     <label htmlFor="employer-work-begin-comment-input">Сведения о приеме</label>
-                    <input id="employer-work-begin-comment-input" name="begin_comment" onChange={this.handleChange} type="text"/>
+                    <input
+                        id="employer-work-begin-comment-input"
+                        name="begin_comment"
+                        value={this.state.begin_comment}
+                        onChange={this.handleChange}
+                        type="text"/>
                 </div>
 
                 <div className="form-group">
@@ -72,7 +89,12 @@ export default class extends React.Component {
 
                 <div className="form-group">
                     <label htmlFor="employer-work-end-comment-input">Сведения об увольнении</label>
-                    <input id="employer-work-end-comment-input" name="end_comment" onChange={this.handleChange} type="text"/>
+                    <input
+                        id="employer-work-end-comment-input"
+                        name="end_comment"
+                        value={this.state.end_comment}
+                        onChange={this.handleChange}
+                        type="text"/>
                 </div>
 
                 <div className="form-controls">

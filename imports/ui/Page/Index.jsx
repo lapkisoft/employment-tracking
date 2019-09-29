@@ -10,15 +10,18 @@ export default class extends React.Component {
         this.authEducation = this.authEducation.bind(this);
         this.authEmployer  = this.authEmployer.bind(this);
 
-        this.state = {};
+        this.auth_ref = React.createRef();
+        this.state    = {};
     }
 
     authPerson(e) {
         e.preventDefault();
 
-        Meteor.loginWithPassword('person', 'person', () => {
+        this.auth_ref.current.classList.add('waiting');
+
+        setTimeout(() => {
             this.props.history.push('/cabinet/person');
-        });
+        }, 2500);
     }
 
     authEmployer(e) {
@@ -39,21 +42,13 @@ export default class extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>Main page</h1>
+            <section className="section-auth-page">
+                <div className="auth" ref={this.auth_ref}>
+                    <img src="/img/logo-big.png" alt=""/>
 
-                <ul>
-                    <li><a href="#" onClick={this.authPerson}>Кабинет соискателя</a></li>
-                    <li><a href="#" onClick={this.authEmployer}>Кабинет работодателя</a></li>
-                    <li><a href="#" onClick={this.authEducation}>Кабинет ВУЗа</a></li>
-                    <li><Link to="/education">Education list</Link></li>
-                    <li><Link to="/education/view">Education view</Link></li>
-                    <li><Link to="/employer">Employer list</Link></li>
-                    <li><Link to="/employer/view">Employer view</Link></li>
-                    <li><Link to="/person">Person list</Link></li>
-                    <li><Link to="/person/view">Person view</Link></li>
-                </ul>
-            </div>
+                    <a href="#" onClick={this.authPerson}>Войти через госуслуги (ЕСИА)</a>
+                </div>
+            </section>
         );
     }
 }

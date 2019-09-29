@@ -75,6 +75,10 @@ class AppRouter extends React.Component {
                             </li>
 
                             <li>
+                                <Link to="/cabinet">Кабинет</Link>
+                            </li>
+
+                            <li>
                                 <Link to="/person">Люди</Link>
                             </li>
 

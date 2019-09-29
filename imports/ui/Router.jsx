@@ -69,7 +69,9 @@ class AppRouter extends React.Component {
                     <nav>
                         <ul>
                             <li className="logo">
-                                <Link to="/">megaproject Х</Link>
+                                <Link to="/">
+                                    <img src="/img/logo.png" alt=""/>
+                                </Link>
                             </li>
 
                             <li>
@@ -116,9 +118,7 @@ class AppRouter extends React.Component {
                 <footer>
                     <nav>
                         <Link to="/">
-                            <b>megaproject X</b>
-                            <br/>
-                            <span>2019</span>
+                            <img src="/img/logo.png" alt=""/>
                         </Link>
                     </nav>
                 </footer>

@@ -1,11 +1,14 @@
 import {Meteor} from 'meteor/meteor';
 import React from 'react';
 import {BrowserRouter as Router, Route, NavLink as Link, Switch} from 'react-router-dom';
+import {Profile} from '../../../api/profile.js';
 
 import {withTracker} from 'meteor/react-meteor-data';
 
 class PagePersonView extends React.Component {
     render() {
+        console.log(this.props.user);
+
         return (
             <section className="section-person-view">
                 <div className="page-navigation">
@@ -44,35 +47,55 @@ class PagePersonView extends React.Component {
                         <ul>
                             <li>
                                 <div className="date">апрель, 2014</div>
-                                <div className="icon"><img src="/img/icons/lideri-rossii.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/icons/lideri-rossii.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#" className="download">Победитель проекта “ЛИДЕРЫ РОССИИ”</a>
                                 </div>
                             </li>
                             <li className="dismissal">
                                 <div className="date">март, 2014</div>
-                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/employers/rostelecom.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Закончил работать в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">февраль, 2014</div>
-                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/employers/rostelecom.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Повышение до Middle Frontend Developer в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">январь, 2014</div>
-                                <div className="icon"><img src="/img/icons/cifrovoy-proriv.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/icons/cifrovoy-proriv.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Участник федерального проекта “Цифровой прорыв”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">декабрь, 2013</div>
-                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/employers/rostelecom.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Начал работать в ПАО “РОСТЕЛЕКОМ” в городе Новосибирск по специальности Junior Frontend Developer</a>
                                 </div>
@@ -164,6 +187,8 @@ class PagePersonView extends React.Component {
     }
 }
 
-export default withTracker(() => {
-    return {};
+export default withTracker((props) => {
+    return {
+        user: Profile.findOne({id: props.match.params.user_id})
+    };
 })(PagePersonView);

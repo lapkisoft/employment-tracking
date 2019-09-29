@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import React from 'react';
 import {BrowserRouter as Router, Route, NavLink as Link, Switch} from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import {Profile} from '../../../api/profile.js';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -35,6 +36,21 @@ class PagePersonList extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+    }
+
+    renderUserArticles() {
+        return this.props.users.map(user => {
+            console.log(user);
+
+            return <article key={user._id} style={{display: 'none'}}>
+                <div className="img-wrapper"><img src="/img/person/avatar-small-empty.png" alt=""/></div>
+                <Link to={`/person/view/${user.id}`} className="name">{user.profile.name}</Link>
+                <div className="work">Не работает</div>
+                <div className="specialty"></div>
+                <div className="achievements">
+                </div>
+            </article>;
+        });
     }
 
     render() {
@@ -182,6 +198,7 @@ class PagePersonList extends React.Component {
                                 <div className="achievements">
                                 </div>
                             </article>
+                            {this.renderUserArticles()}
                         </div>
                     </div>
                 </div>
@@ -191,5 +208,7 @@ class PagePersonList extends React.Component {
 }
 
 export default withTracker(() => {
-    return {};
+    return {
+        users: Profile.find({'profile.role': 'Person'}, {limit: 20}).fetch()
+    };
 })(PagePersonList);

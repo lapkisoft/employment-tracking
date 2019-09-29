@@ -118,8 +118,9 @@ class AppRouter extends React.Component {
                         <Route path="/employer" exact component={PageEmployerList}/>
                         <Route path="/employer/view" component={PageEmployerView}/>
 
-                        <Route path="/person" exact component={PagePersonList}/>
+                        <Route path="/person/view/:user_id" component={PagePersonView}/>
                         <Route path="/person/view" component={PagePersonView}/>
+                        <Route path="/person" exact component={PagePersonList}/>
 
                         <Route path="/specialty" exact component={PageSpecialtyList}/>
                         <Route path="/specialty/view" component={PageSpecialtyView}/>

@@ -2,11 +2,16 @@ import {Meteor} from 'meteor/meteor';
 import React from 'react';
 
 import {withTracker} from 'meteor/react-meteor-data';
+import {NavLink as Link} from 'react-router-dom';
 
 class PageEmployerView extends React.Component {
     render() {
         return (
-            <div>
+            <section className="section-employer-view">
+                <div className="page-navigation">
+                    <Link to="/employer">Назад</Link>
+                </div>
+
                 <div className="organization-header">
                     <div className="img-wrapper">
                         <img src="/img/employers/rostelecom.png" alt=""/>
@@ -19,7 +24,12 @@ class PageEmployerView extends React.Component {
                 </div>
                 <div className="organization-about">
                     <h1 className="block-name">Об организации</h1>
-                    <p className="about">ПАО «Ростелеком» (www.company.rt.ru) — крупнейший в России провайдер цифровых услуг и решений, который присутствует во всех сегментах рынка и охватывает миллионы домохозяйств, государственных и частных организаций. «Ростелеком» занимает лидирующие позиции на рынке услуг высокоскоростного доступа в интернет и платного телевидения. Услугами ШПД пользуется свыше 13,0 млн абонентов, платного ТВ — 10,2 млн, из них свыше 5,4 млн подключено к услуге «Интерактивное ТВ»</p>
+                    <p className="about">
+                        ПАО «Ростелеком» (www.company.rt.ru) — крупнейший в России провайдер цифровых услуг и решений, который присутствует
+                        во всех сегментах рынка и охватывает миллионы домохозяйств, государственных и частных организаций. «Ростелеком»
+                        занимает лидирующие позиции на рынке услуг высокоскоростного доступа в интернет и платного телевидения. Услугами
+                        ШПД пользуется свыше 13,0 млн абонентов, платного ТВ — 10,2 млн, из них свыше 5,4 млн подключено к услуге «Интерактивное ТВ»
+                    </p>
                     <div className="split-line"></div>
                     <div className="images">
                         <div className="img-wrapper">
@@ -67,7 +77,7 @@ class PageEmployerView extends React.Component {
                                     <p className="name">Глазков Федор</p>
                                 </div>
                             </div>
-                            <p className="more">ещё + 254 <br />специалистов</p>
+                            <p className="more">ещё + 254 <br/>специалистов</p>
                         </div>
                     </div>
 
@@ -114,7 +124,7 @@ class PageEmployerView extends React.Component {
                     </ul>
                 </div>
 
-            </div>
+            </section>
         );
     }
 }

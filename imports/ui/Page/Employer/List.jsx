@@ -1,5 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import React from 'react';
+import {BrowserRouter as Router, Route, NavLink as Link, Switch} from 'react-router-dom';
 
 import {withTracker} from 'meteor/react-meteor-data';
 
@@ -73,37 +74,37 @@ class PageEmployerList extends React.Component {
                         <div className="employer-list">
                             <article>
                                 <div className="img-wrapper"><img src="/img/employers/rostelecom.png" alt=""/></div>
-                                <div className="name">Ростелеком</div>
+                                <Link to="/employer/view" className="name">Ростелеком</Link>
                                 <div className="vacancies"><a href="#">76 стажировок</a></div>
                                 <div className="events"><a href="#">4 события</a></div>
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/employers/mailru.png" alt=""/></div>
-                                <div className="name">Mailru Group</div>
+                                <Link to="/employer/view" className="name">Mailru Group</Link>
                                 <div className="vacancies"><a href="#">32 стажировки</a></div>
                                 <div className="events"><a href="#">2 события</a></div>
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/employers/1c.png" alt=""/></div>
-                                <div className="name">Фирма “1С”</div>
+                                <Link to="/employer/view" className="name">Фирма “1С”</Link>
                                 <div className="vacancies"><a href="#">17 стажировок</a></div>
                                 <div className="events"><a href="#">2 события</a></div>
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/employers/megafon.png" alt=""/></div>
-                                <div className="name">Мегафон</div>
+                                <Link to="/employer/view" className="name">Мегафон</Link>
                                 <div className="vacancies"><a href="#">44 стажировки</a></div>
                                 <div className="events"><a href="#">12 событий</a></div>
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/employers/mts.png" alt=""/></div>
-                                <div className="name">МТС</div>
+                                <Link to="/employer/view" className="name">МТС</Link>
                                 <div className="vacancies"><a href="#">2 стажировки</a></div>
                                 <div className="events"><a href="#">8 событий</a></div>
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/employers/none.png" alt=""/></div>
-                                <div className="name">Рога и копыта</div>
+                                <Link to="/employer/view" className="name">Рога и копыта</Link>
                                 <div className="vacancies"><a href="#">2 стажировки</a></div>
                                 <div className="events"><a href="#">6 событий</a></div>
                             </article>

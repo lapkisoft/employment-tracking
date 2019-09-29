@@ -61,19 +61,23 @@
                     }
 
                     .name {
-                        width:       calc(25% - 65px);
-                        padding:     0 5px;
-                        font-size:   15px;
-                        font-weight: 400;
-                        line-height: 1.2;
+                        width:           calc(25% - 65px);
+                        padding:         0 5px;
+                        font-size:       15px;
+                        font-weight:     400;
+                        line-height:     1.2;
+                        color:           #4a4a4a;
+                        text-decoration: none;
                     }
 
                     .vacancies, .events {
-                        width:       20%;
-                        padding:     0 5px;
-                        font-size:   15px;
-                        font-weight: 400;
-                        line-height: 1.2;
+                        width:           20%;
+                        padding:         0 5px;
+                        font-size:       15px;
+                        font-weight:     400;
+                        line-height:     1.2;
+                        color:           #4a4a4a;
+                        text-decoration: none;
 
                         a {
                             display:         inline-block;

@@ -27,16 +27,17 @@ export default class extends React.Component {
     render() {
         return (
             <section className="section-specialty-list">
-                <div className="search-input-header">
-                    <input
-                        form="search-form"
-                        name="search"
-                        type="search"
-                        onChange={this.handleChange}
-                        value={this.state.search}
-                        placeholder="Введите ОКСО или наименование специальности"/>
-                    <div className="hints"/>
-                </div>
+                <form action="">
+                    <div className="search-input-header">
+                        <input
+                            name="search"
+                            type="search"
+                            onChange={this.handleChange}
+                            value={this.state.search}
+                            placeholder="Введите ОКСО или наименование специальности"/>
+                        <div className="hints"/>
+                    </div>
+                </form>
 
                 <div className="specialty-listing-wrapper">
                     <div className="specialty-listing-header">

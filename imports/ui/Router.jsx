@@ -71,13 +71,13 @@ class AppRouter extends React.Component {
                     <nav>
                         <ul>
                             <li className="logo">
-                                <Link to="/cabinet/personal">
+                                <Link to="/cabinet/person">
                                     <img src="/img/logo.png" alt=""/>
                                 </Link>
                             </li>
 
                             <li>
-                                <Link to="/cabinet/personal">Кабинет</Link>
+                                <Link to="/cabinet/person">Кабинет</Link>
                             </li>
 
                             <li>

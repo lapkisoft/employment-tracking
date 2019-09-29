@@ -51,14 +51,14 @@ class PagePersonView extends React.Component {
                             </li>
                             <li className="dismissal">
                                 <div className="date">март, 2014</div>
-                                <div className="icon"><img src="/img/employer/rostelecom.png" alt=""/></div>
+                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
                                 <div className="content">
                                     <a href="#">Закончил работать в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">февраль, 2014</div>
-                                <div className="icon"><img src="/img/employer/rostelecom.png" alt=""/></div>
+                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
                                 <div className="content">
                                     <a href="#">Повышение до Middle Frontend Developer в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
@@ -72,7 +72,7 @@ class PagePersonView extends React.Component {
                             </li>
                             <li>
                                 <div className="date">декабрь, 2013</div>
-                                <div className="icon"><img src="/img/employer/rostelecom.png" alt=""/></div>
+                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
                                 <div className="content">
                                     <a href="#">Начал работать в ПАО “РОСТЕЛЕКОМ” в городе Новосибирск по специальности Junior Frontend Developer</a>
                                 </div>

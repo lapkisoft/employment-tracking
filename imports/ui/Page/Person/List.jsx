@@ -28,21 +28,19 @@ class PagePersonList extends React.Component {
     render() {
         return (
             <section className="section-person-list">
-                <div className="person-list-header">
-                    <div className="search-input">
-                        <input
-                            form="search-form"
-                            name="search"
-                            type="search"
-                            onChange={this.handleChange}
-                            value={this.state.search}
-                            placeholder="Введите имя или фамилию участника"/>
-                        <div className="hints"/>
-                    </div>
+                <div className="search-input-header">
+                    <input
+                        form="search-form"
+                        name="search"
+                        type="search"
+                        onChange={this.handleChange}
+                        value={this.state.search}
+                        placeholder="Введите имя или фамилию участника"/>
+                    <div className="hints"/>
                 </div>
 
                 <div className="user-list-columns">
-                    <form id="search-form" action="">
+                    <form id="search-form" className="search-form" action="">
                         <div className="form-group">
                             <label htmlFor="search-form-speciality-input">Специальность</label>
 
@@ -115,8 +113,10 @@ class PagePersonList extends React.Component {
                             </div>
                         </div>
 
-                        <button type="submit">Найти</button>
-                        <button type="reset"><span>Сбросить фильтр</span></button>
+                        <div className="controls">
+                            <button type="submit">Найти</button>
+                            <button type="reset"><span>Сбросить фильтр</span></button>
+                        </div>
                     </form>
 
                     <div className="user-list-wrapper">

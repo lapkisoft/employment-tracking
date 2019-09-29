@@ -9,7 +9,7 @@ class PageEmployerView extends React.Component {
             <div>
                 <div className="organization-header">
                     <div className="img-wrapper">
-                        <img src="/img/employer/rostelecom.png" alt=""/>
+                        <img src="/img/employers/rostelecom.png" alt=""/>
                     </div>
                     <div className="content">
                         <h1 className="name">ПАО "РОСТЕЛЕКОМ"</h1>

@@ -15,6 +15,8 @@ import PageEmployerList from './Page/Employer/List.jsx';
 import PageEmployerView from './Page/Employer/View.jsx';
 import PagePersonList from './Page/Person/List.jsx';
 import PagePersonView from './Page/Person/View.jsx';
+import PageSpecialtyList from './Page/Specialty/List.jsx';
+import PageSpecialtyView from './Page/Specialty/View.jsx';
 import PieChart from './Chart/Pie/Index.jsx';
 
 class AppRouter extends React.Component {
@@ -69,7 +71,13 @@ class AppRouter extends React.Component {
                     <nav>
                         <ul>
                             <li className="logo">
-                                <Link to="/">megaproject Х</Link>
+                                <Link to="/">
+                                    <img src="/img/logo.png" alt=""/>
+                                </Link>
+                            </li>
+
+                            <li>
+                                <Link to="/cabinet">Кабинет</Link>
                             </li>
 
                             <li>
@@ -78,6 +86,10 @@ class AppRouter extends React.Component {
 
                             <li>
                                 <Link to="/employer">Организации</Link>
+                            </li>
+
+                            <li>
+                                <Link to="/specialty">Специальности</Link>
                             </li>
 
                             <li>
@@ -109,6 +121,9 @@ class AppRouter extends React.Component {
                         <Route path="/person" exact component={PagePersonList}/>
                         <Route path="/person/view" component={PagePersonView}/>
 
+                        <Route path="/specialty" exact component={PageSpecialtyList}/>
+                        <Route path="/specialty/view" component={PageSpecialtyView}/>
+
                         <Route path="/pie" exact render={() => <PieChart chartData={chartData}/>}/>
                     </Switch>
                 </main>
@@ -116,9 +131,7 @@ class AppRouter extends React.Component {
                 <footer>
                     <nav>
                         <Link to="/">
-                            <b>megaproject X</b>
-                            <br/>
-                            <span>2019</span>
+                            <img src="/img/logo.png" alt=""/>
                         </Link>
                     </nav>
                 </footer>

@@ -1,0 +1,273 @@
+.organization-header {
+    display:         flex;
+    flex-direction:  row;
+    flex-wrap:       nowrap;
+    justify-content: flex-start;
+    align-items:     flex-start;
+    margin:          0 5px 34px 5px;
+    padding:         1px;
+    background:      #ffffff;
+    box-shadow:      0px 1px 8px rgba(0, 0, 0, 0.15);
+
+    .content {
+        padding: 15px;
+
+        .name {
+            font-family: Futura PT;
+            font-size: 36px;
+            line-height: 46px;
+            color: #4A4A4A;
+            font-weight: 400;
+
+        }
+
+        .city {
+            font-family: Futura PT;
+            font-size: 18px;
+            line-height: 23px;
+            color: #555555;
+            font-weight: 400;
+        }
+
+        .flow {
+            font-family: Futura PT;
+            font-size: 18px;
+            line-height: 23px;
+            color: #525252;
+            font-weight: 400;
+        }
+    }
+
+    .img-wrapper {
+        width: 164px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.organization-about {
+    display:         flex;
+    flex-direction:  column;
+    flex-wrap:       nowrap;
+    justify-content: flex-start;
+    align-items:     flex-start;
+    margin:          34px 5px;
+    padding:         18px 49px;
+    padding-bottom:  49px;
+    background:      #ffffff;
+    box-shadow:      0px 1px 8px rgba(0, 0, 0, 0.15);
+
+    .block-name {
+        font-family: Futura PT;
+        font-size: 28px;
+        line-height: 36px;
+        color: #4A4A4A;
+        font-weight: 400;
+    }
+    .about {
+        font-family: Futura PT;
+        font-size: 16px;
+        line-height: 20px;
+        color: #4A4A4A;
+        font-weight: 400;
+    }
+    .split-line {
+        width: 100%;
+        border: 1px dashed #CFCFCF;
+        margin: 18px 0;
+    }
+    .images {
+        width: 100%;
+        display:         flex;
+        flex-direction:  row;
+        justify-content: space-between;
+        align-items:     center;
+
+        .img-wrapper {
+            width: 25%;
+            margin: 0 12px;
+
+            img {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .img-wrapper {
+        width: 164px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.organization-content-row {
+    display:         flex;
+    flex-direction:  row;
+}
+
+.organization-with-us {
+    display:         flex;
+    flex-direction:  column;
+    width: 60%;
+    flex-wrap:       nowrap;
+    justify-content: flex-start;
+    align-items:     flex-start;
+    margin:          34px 5px;
+    padding:         18px 49px;
+    padding-bottom:  49px;
+    background:      #ffffff;
+    box-shadow:      0px 1px 8px rgba(0, 0, 0, 0.15);
+
+    .block-name {
+        font-family: Futura PT;
+        font-size: 28px;
+        line-height: 36px;
+        color: #4A4A4A;
+        font-weight: 400;
+    }
+
+    .block-content {
+        width: 100%;
+        display:         flex;
+        flex-direction:  row;
+        align-items:     flex-start;
+
+        .users {
+            display:         flex;
+            flex-direction:  row;
+            justify-content: space-between;
+            align-items:     center;
+
+            .user {
+                margin: 0 15px;
+
+                .name {
+                    font-family: Futura PT;
+                    font-size: 16px;
+                    line-height: 21px;
+                    text-align: center;
+                    color: #4A4A4A;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .more {
+            padding: 10px 0 0 5px;
+            font-family: Futura PT;
+            font-size: 26px;
+            line-height: 21px;
+            color: #A8A8A8;
+            font-weight: 400;
+        }
+    }
+
+    .img-wrapper {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.organization-tags {
+    display:         flex;
+    width: 40%;
+    flex-direction:  column;
+    flex-wrap:       nowrap;
+    justify-content: flex-start;
+    align-items:     flex-start;
+    margin:          34px 5px;
+    padding:         18px 49px;
+    padding-bottom:  49px;
+    background:      #ffffff;
+    box-shadow:      0px 1px 8px rgba(0, 0, 0, 0.15);
+
+    .block-name {
+        font-family: Futura PT;
+        font-size: 28px;
+        line-height: 36px;
+        color: #4A4A4A;
+        font-weight: 400;
+    }
+
+    .tags {
+        width: 100%;
+        display:         flex;
+        flex-wrap:       wrap;
+        flex-direction:  row;
+        justify-content: flex-start;
+
+        .tag {
+            padding: 5px 21px;
+            margin: 5px;
+            background: #082C54;
+            border: 1px solid #2B2B2B;
+            box-sizing: border-box;
+            border-radius: 30px;
+
+            font-family: Futura PT;
+            font-size: 14px;
+            line-height: 18px;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.organization-events {
+    h2 {
+        margin:      0 0 30px;
+        font-size:   28px;
+        font-weight: 400;
+        line-height: 36px;
+    }
+
+    ul {
+        display:               grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:              30px;
+        list-style:            none;
+        margin:                0;
+        padding:               0;
+
+        > li {
+            background:    white;
+            margin:        0;
+            border-radius: 5px;
+            box-shadow:    0px 1px 8px rgba(0, 0, 0, 0.15);
+            padding:       45px 24px;
+
+            .img-wrapper {
+                width:  100%;
+                height: 100px;
+                margin: 0 0 45px;
+
+                img {
+                    display:         block;
+                    width:           100%;
+                    height:          100%;
+                    margin:          0 auto;
+                    padding:         0;
+                    object-fit:      scale-down;
+                    object-position: center center;
+                }
+            }
+
+            h4 {
+                margin:      0 0 5px;
+                padding:     0;
+                font-size:   18px;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size:   16px;
+                line-height: 1.2;
+                color:       black;
+            }
+        }
+    }
+}

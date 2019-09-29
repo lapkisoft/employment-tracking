@@ -154,6 +154,8 @@
         margin:              0 0 50px;
 
         .plank {
+            display:       block;
+            position:      relative;
             background:    white;
             border-radius: 5px;
             box-shadow:    0px 1px 8px rgba(0, 0, 0, 0.15);
@@ -165,6 +167,33 @@
                 font-size:   28px;
                 font-weight: 400;
                 line-height: 36px;
+            }
+
+            a.create {
+                display:  block;
+                position: absolute;
+                top:      32px;
+                right:    32px;
+                margin:   0;
+                padding:  2px;
+
+                img {
+                    transition: filter 0.15s, opacity 0.15s;
+                    display:    block;
+                    width:      28px;
+                    height:     28px;
+                    margin:     0;
+                    padding:    0;
+                    filter:     grayscale(1);
+                    opacity:    0.25;
+                }
+
+                &:hover {
+                    img {
+                        filter:  none;
+                        opacity: 1;
+                    }
+                }
             }
 
             &.timeline {
@@ -203,18 +232,22 @@
                             width:           80px;
                             min-height:      100px;
 
-                            img {
-                                display:         block;
-                                position:        relative;
-                                margin:          0 auto;
-                                width:           54px;
-                                height:          54px;
-                                object-position: center center;
-                                object-fit:      scale-down;
-                                border-radius:   50%;
-                                border:          2px solid var(--line-color);
-                                background:      white;
-                                z-index:         2;
+                            .img {
+                                border-radius: 50%;
+                                border:        2px solid var(--line-color);
+                                overflow:      hidden;
+                                position:      relative;
+                                background:    white;
+                                z-index:       2;
+
+                                img {
+                                    display:         block;
+                                    margin:          0 auto;
+                                    width:           54px;
+                                    height:          54px;
+                                    object-position: center center;
+                                    object-fit:      scale-down;
+                                }
                             }
                         }
 
@@ -224,8 +257,27 @@
                             line-height: 23px;
 
                             a {
+                                display:         inline-block;
+                                position:        relative;
                                 color:           #4a4a4a;
                                 text-decoration: none;
+
+                                &.download {
+                                    padding-right: 30px;
+
+                                    &:after {
+                                        content:             '';
+                                        display:             block;
+                                        position:            absolute;
+                                        top:                 0;
+                                        right:               0;
+                                        width:               24px;
+                                        height:              24px;
+                                        background-image:    url(/img/icons/download.png);
+                                        background-repeat:   no-repeat;
+                                        background-position: center center;
+                                    }
+                                }
                             }
                         }
 
@@ -247,6 +299,13 @@
 
                         &.dismissal {
                             --line-color: #cccccc;
+
+                            .icon {
+                                img {
+                                    filter:  grayscale(1.5);
+                                    opacity: 0.35;
+                                }
+                            }
                         }
                     }
                 }

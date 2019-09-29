@@ -51,14 +51,14 @@ class PagePersonView extends React.Component {
                             </li>
                             <li className="dismissal">
                                 <div className="date">март, 2014</div>
-                                <div className="icon"><img src="/img/employer/rostelecom.png" alt=""/></div>
+                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
                                 <div className="content">
                                     <a href="#">Закончил работать в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">февраль, 2014</div>
-                                <div className="icon"><img src="/img/employer/rostelecom.png" alt=""/></div>
+                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
                                 <div className="content">
                                     <a href="#">Повышение до Middle Frontend Developer в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
@@ -72,7 +72,7 @@ class PagePersonView extends React.Component {
                             </li>
                             <li>
                                 <div className="date">декабрь, 2013</div>
-                                <div className="icon"><img src="/img/employer/rostelecom.png" alt=""/></div>
+                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
                                 <div className="content">
                                     <a href="#">Начал работать в ПАО “РОСТЕЛЕКОМ” в городе Новосибирск по специальности Junior Frontend Developer</a>
                                 </div>
@@ -138,21 +138,21 @@ class PagePersonView extends React.Component {
                     <ul>
                         <li>
                             <div className="img-wrapper">
-                                <img src="/img/events/01.png" alt=""/>
+                                <img src="/img/events/yap.png" alt=""/>
                             </div>
                             <h4>Студенческая олимпиада «Я — профессионал»</h4>
                             <p>Олимпиада дает возможности для развития в лучших вузах страны и открывает перспективы трудоустройства в крупнейшие компании</p>
                         </li>
                         <li>
                             <div className="img-wrapper">
-                                <img src="/img/events/02.png" alt=""/>
+                                <img src="/img/events/best-social-project.png" alt=""/>
                             </div>
                             <h4>«Лучший социальный проект года»</h4>
                             <p>Проект нацелен на популяризацию социального предпринимательства</p>
                         </li>
                         <li>
                             <div className="img-wrapper">
-                                <img src="/img/events/03.png" alt=""/>
+                                <img src="/img/events/dobrovolec.png" alt=""/>
                             </div>
                             <h4>«Доброволец России»</h4>
                             <p>Всероссийский конкурс лучших добровольческих инициатив</p>

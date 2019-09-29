@@ -119,8 +119,54 @@ class PagePersonList extends React.Component {
                         <button type="reset"><span>Сбросить фильтр</span></button>
                     </form>
 
-                    <div className="user-list">
+                    <div className="user-list-wrapper">
+                        <div className="user-list-header">
+                            <div className="count">172 участника</div>
+                            <div className="work">место работы</div>
+                            <div className="speciality">специальность</div>
+                            <div className="achievements">достижения</div>
+                        </div>
 
+                        <div className="user-list">
+                            <article>
+                                <div className="img-wrapper"><img src="/img/person/avatar-small-01.png" alt=""/></div>
+                                <div className="name">Петров Петр</div>
+                                <div className="work">ООО “Стольмаш”</div>
+                                <div className="specialty">Столяр 2 разряд</div>
+                                <div className="achievements">
+                                    <img src="/img/icons/world-skills.png" alt=""/>
+                                </div>
+                            </article>
+                            <article>
+                                <div className="img-wrapper"><img src="/img/person/avatar-small-02.png" alt=""/></div>
+                                <div className="name">Севастьянова Анжелика</div>
+                                <div className="work">ООО “Банкфинанскредит”</div>
+                                <div className="specialty">Старший консультант по инвестиционным продуктам</div>
+                                <div className="achievements">
+                                    <img src="/img/icons/lideri-rossii.png" alt=""/>
+                                    <img src="/img/icons/world-skills.png" alt=""/>
+                                </div>
+                            </article>
+                            <article>
+                                <div className="img-wrapper"><img src="/img/person/avatar-small-03.png" alt=""/></div>
+                                <div className="name">Магомед Нуриев</div>
+                                <div className="work">ООО “Юрконсалт”</div>
+                                <div className="specialty">Юрист</div>
+                                <div className="achievements">
+                                    <img src="/img/icons/lideri-rossii.png" alt=""/>
+                                    <img src="/img/icons/cifrovoy-proriv.png" alt=""/>
+                                    <img src="/img/icons/world-skills.png" alt=""/>
+                                </div>
+                            </article>
+                            <article>
+                                <div className="img-wrapper"><img src="/img/person/avatar-small-empty.png" alt=""/></div>
+                                <div className="name">Никита Тигров</div>
+                                <div className="work">Не работает</div>
+                                <div className="specialty"></div>
+                                <div className="achievements">
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </section>

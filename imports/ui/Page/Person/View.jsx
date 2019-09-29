@@ -34,7 +34,7 @@ class PagePersonView extends React.Component {
                         <small>Рейтинг</small>
                         <span>68</span>
                     </div>
-                    <a href="#">Написать</a>
+                    <a href="#">Подписаться</a>
                 </div>
 
                 <div className="person-dashboard">

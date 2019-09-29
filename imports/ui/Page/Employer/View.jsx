@@ -22,6 +22,7 @@ class PageEmployerView extends React.Component {
                         <h4 className="flow">Текучесть кадров: 2,01%</h4>
                     </div>
                 </div>
+
                 <div className="organization-about">
                     <h1 className="block-name">Об организации</h1>
                     <p className="about">

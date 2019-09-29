@@ -5,7 +5,31 @@ class PagePerson extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.toggleTimeLineForm            = this.toggleTimeLineForm.bind(this);
+        this.toggleEducationForm           = this.toggleEducationForm.bind(this);
+        this.toggleEducationAdditionalForm = this.toggleEducationAdditionalForm.bind(this);
+        this.toggleSkillsForm              = this.toggleSkillsForm.bind(this);
+
+        this.timeline_ref             = React.createRef();
+        this.education_ref            = React.createRef();
+        this.education_additional_ref = React.createRef();
+        this.skills_ref               = React.createRef();
+    }
+
+    toggleTimeLineForm(e) {
+        e.preventDefault();
+    }
+
+    toggleEducationForm(e) {
+        e.preventDefault();
+    }
+
+    toggleEducationAdditionalForm(e) {
+        e.preventDefault();
+    }
+
+    toggleSkillsForm(e) {
+        e.preventDefault();
     }
 
     render() {
@@ -36,10 +60,10 @@ class PagePerson extends React.Component {
                 </div>
 
                 <div className="person-dashboard">
-                    <div className="plank timeline">
+                    <div className="plank timeline" ref={this.timeline_ref}>
                         <h2>Опыт работы и достижения</h2>
 
-                        <a href="#" className="create">
+                        <a href="#" className="create" onClick={this.toggleTimeLineForm}>
                             <img src="/img/icons/plus-blue.png" alt=""/>
                         </a>
 
@@ -102,10 +126,10 @@ class PagePerson extends React.Component {
                         </ul>
                     </div>
 
-                    <div className="plank education">
+                    <div className="plank education" ref={this.education_ref}>
                         <h2>Образование</h2>
 
-                        <a href="#" className="create">
+                        <a href="#" className="create" onClick={this.toggleEducationForm}>
                             <img src="/img/icons/plus-blue.png" alt=""/>
                         </a>
 
@@ -126,10 +150,10 @@ class PagePerson extends React.Component {
                         </ul>
                     </div>
 
-                    <div className="plank education-additional">
+                    <div className="plank education-additional" ref={this.education_additional_ref}>
                         <h2>Дополнительное образование</h2>
 
-                        <a href="#" className="create">
+                        <a href="#" className="create" onClick={this.toggleEducationAdditionalForm}>
                             <img src="/img/icons/plus-blue.png" alt=""/>
                         </a>
 
@@ -150,10 +174,10 @@ class PagePerson extends React.Component {
                         </ul>
                     </div>
 
-                    <div className="plank skills">
+                    <div className="plank skills" ref={this.skills_ref}>
                         <h2>Навыки</h2>
 
-                        <a href="#" className="create">
+                        <a href="#" className="create" onClick={this.toggleSkillsForm}>
                             <img src="/img/icons/plus-blue.png" alt=""/>
                         </a>
 

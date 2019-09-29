@@ -39,6 +39,10 @@ class PagePerson extends React.Component {
                     <div className="plank timeline">
                         <h2>Опыт работы и достижения</h2>
 
+                        <a href="#" className="create">
+                            <img src="/img/icons/plus-blue.png" alt=""/>
+                        </a>
+
                         <ul>
                             <li>
                                 <div className="date">апрель, 2014</div>
@@ -101,6 +105,10 @@ class PagePerson extends React.Component {
                     <div className="plank education">
                         <h2>Образование</h2>
 
+                        <a href="#" className="create">
+                            <img src="/img/icons/plus-blue.png" alt=""/>
+                        </a>
+
                         <ul>
                             <li>
                                 <div className="img-wrapper">
@@ -121,6 +129,10 @@ class PagePerson extends React.Component {
                     <div className="plank education-additional">
                         <h2>Дополнительное образование</h2>
 
+                        <a href="#" className="create">
+                            <img src="/img/icons/plus-blue.png" alt=""/>
+                        </a>
+
                         <ul>
                             <li>
                                 <div className="img-wrapper">
@@ -140,6 +152,10 @@ class PagePerson extends React.Component {
 
                     <div className="plank skills">
                         <h2>Навыки</h2>
+
+                        <a href="#" className="create">
+                            <img src="/img/icons/plus-blue.png" alt=""/>
+                        </a>
 
                         <ul>
                             <li>HTML</li>

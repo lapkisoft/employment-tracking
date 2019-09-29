@@ -10,7 +10,7 @@ class PagePerson extends React.Component {
 
     render() {
         return (
-            <section className="section-person-view">
+            <section className="section-person-view section-cabinet-person">
                 <div className="person-header">
                     <div className="img-wrapper">
                         <img src="/img/person/avatar-01.png" alt=""/>
@@ -42,35 +42,55 @@ class PagePerson extends React.Component {
                         <ul>
                             <li>
                                 <div className="date">апрель, 2014</div>
-                                <div className="icon"><img src="/img/icons/lideri-rossii.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/icons/lideri-rossii.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#" className="download">Победитель проекта “ЛИДЕРЫ РОССИИ”</a>
                                 </div>
                             </li>
                             <li className="dismissal">
                                 <div className="date">март, 2014</div>
-                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/employers/rostelecom.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Закончил работать в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">февраль, 2014</div>
-                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/employers/rostelecom.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Повышение до Middle Frontend Developer в ПАО “РОСТЕЛЕКОМ”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">январь, 2014</div>
-                                <div className="icon"><img src="/img/icons/cifrovoy-proriv.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/icons/cifrovoy-proriv.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Участник федерального проекта “Цифровой прорыв”</a>
                                 </div>
                             </li>
                             <li>
                                 <div className="date">декабрь, 2013</div>
-                                <div className="icon"><img src="/img/employers/rostelecom.png" alt=""/></div>
+                                <div className="icon">
+                                    <div className="img">
+                                        <img src="/img/employers/rostelecom.png" alt=""/>
+                                    </div>
+                                </div>
                                 <div className="content">
                                     <a href="#">Начал работать в ПАО “РОСТЕЛЕКОМ” в городе Новосибирск по специальности Junior Frontend Developer</a>
                                 </div>

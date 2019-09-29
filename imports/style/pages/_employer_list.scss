@@ -7,12 +7,12 @@
         align-items:     flex-start;
 
         .search-form {
-            width:   260px;
-            padding: 0 20px;
+            width:   240px;
+            padding: 0 20px 0 0;
         }
 
         .employer-list-wrapper {
-            width: calc(100% - 260px);
+            width: calc(100% - 240px);
 
             .employer-list-header {
                 display:         flex;

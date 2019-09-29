@@ -7,12 +7,12 @@
         align-items:     flex-start;
 
         .search-form {
-            width:   260px;
-            padding: 0 20px;
+            width:   240px;
+            padding: 0 20px 0 0;
         }
 
         .user-list-wrapper {
-            width: calc(100% - 260px);
+            width: calc(100% - 240px);
 
             .user-list-header {
                 display:         flex;
@@ -74,19 +74,23 @@
                     }
 
                     .name {
-                        width:       calc(25% - 65px);
-                        padding:     0 5px;
-                        font-size:   15px;
-                        font-weight: 400;
-                        line-height: 1.2;
+                        width:           calc(25% - 65px);
+                        padding:         0 5px;
+                        font-size:       15px;
+                        font-weight:     400;
+                        line-height:     1.2;
+                        color:           #4a4a4a;
+                        text-decoration: none;
                     }
 
                     .work, .specialty {
-                        width:       25%;
-                        font-size:   15px;
-                        font-weight: 400;
-                        line-height: 1.2;
-                        padding:     0 5px;
+                        width:           25%;
+                        font-size:       15px;
+                        font-weight:     400;
+                        line-height:     1.2;
+                        padding:         0 5px;
+                        color:           #4a4a4a;
+                        text-decoration: none;
                     }
 
                     .achievements {

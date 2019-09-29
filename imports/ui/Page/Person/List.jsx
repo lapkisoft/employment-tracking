@@ -1,5 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import React from 'react';
+import {BrowserRouter as Router, Route, NavLink as Link, Switch} from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -145,7 +146,7 @@ class PagePersonList extends React.Component {
                         <div className="user-list">
                             <article>
                                 <div className="img-wrapper"><img src="/img/person/avatar-small-01.png" alt=""/></div>
-                                <div className="name">Петров Петр</div>
+                                <Link to="/person/view" className="name">Петров Петр</Link>
                                 <div className="work">ООО “Стольмаш”</div>
                                 <div className="specialty">Столяр 2 разряд</div>
                                 <div className="achievements">
@@ -154,7 +155,7 @@ class PagePersonList extends React.Component {
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/person/avatar-small-02.png" alt=""/></div>
-                                <div className="name">Севастьянова Анжелика</div>
+                                <Link to="/person/view" className="name">Севастьянова Анжелика</Link>
                                 <div className="work">ООО “Банкфинанскредит”</div>
                                 <div className="specialty">Старший консультант по инвестиционным продуктам</div>
                                 <div className="achievements">
@@ -164,7 +165,7 @@ class PagePersonList extends React.Component {
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/person/avatar-small-03.png" alt=""/></div>
-                                <div className="name">Магомед Нуриев</div>
+                                <Link to="/person/view" className="name">Магомед Нуриев</Link>
                                 <div className="work">ООО “Юрконсалт”</div>
                                 <div className="specialty">Юрист</div>
                                 <div className="achievements">
@@ -175,7 +176,7 @@ class PagePersonList extends React.Component {
                             </article>
                             <article>
                                 <div className="img-wrapper"><img src="/img/person/avatar-small-empty.png" alt=""/></div>
-                                <div className="name">Никита Тигров</div>
+                                <Link to="/person/view" className="name">Никита Тигров</Link>
                                 <div className="work">Не работает</div>
                                 <div className="specialty"></div>
                                 <div className="achievements">

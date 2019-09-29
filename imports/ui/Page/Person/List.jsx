@@ -1,5 +1,8 @@
 import {Meteor} from 'meteor/meteor';
 import React from 'react';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 import {withTracker} from 'meteor/react-meteor-data';
 
@@ -11,13 +14,21 @@ class PagePersonList extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
-            search: ''
+            search:               '',
+            participate_rsv_from: null,
+            participate_rsv_to:   null
         };
     }
 
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
+        });
+    }
+
+    handleChangeDate(name, value) {
+        this.setState({
+            [name]: value
         });
     }
 
@@ -107,9 +118,13 @@ class PagePersonList extends React.Component {
                             <label htmlFor="search-form-age-from-input">Принимал участие в период</label>
 
                             <div className="range">
-                                <input name="participate_rsv_from" type="text"/>
+                                <DatePicker
+                                    selected={this.state.participate_rsv_from}
+                                    onChange={value => this.handleChangeDate('participate_rsv_from', value)}/>
                                 <span>&ndash;</span>
-                                <input name="participate_rsv_to" type="text"/>
+                                <DatePicker
+                                    selected={this.state.participate_rsv_to}
+                                    onChange={value => this.handleChangeDate('participate_rsv_to', value)}/>
                             </div>
                         </div>
 

@@ -1,0 +1,18 @@
+.section-education-list {
+    .education-list-columns {
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+        justify-content: flex-start;
+        align-items:     flex-start;
+
+        .search-form {
+            width:   240px;
+            padding: 0 20px 0 0;
+        }
+
+        .education-list-wrapper {
+            width: calc(100% - 240px);
+        }
+    }
+}

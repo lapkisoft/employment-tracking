@@ -50,7 +50,7 @@ header {
                     display:         block;
                     position:        relative;
                     margin:          0;
-                    padding:         20px;
+                    padding:         20px 15px;
                     font-size:       16px;
                     line-height:     21px;
                     text-decoration: none;
@@ -62,9 +62,9 @@ header {
                         display:    block;
                         position:   absolute;
                         height:     2px;
-                        width:      calc(100% - 40px);
-                        bottom:     0;
-                        left:       20px;
+                        width:      100%;
+                        bottom:     -1px;
+                        left:       0;
                         background: #1e5ca1;
                         transform:  scaleX(0);
                     }
@@ -84,11 +84,15 @@ header {
 
                 &.logo {
                     > a {
-                        padding:     20px 40px;
+                        display:     block;
+                        width:       auto;
+                        margin:      0 120px 0 0;
+                        padding:     20px;
                         font-size:   18px;
                         font-weight: 700;
                         line-height: 22px;
                         color:       #1e5ca1;
+                        background:  transparent;
 
                         &:after {
                             content: none;
@@ -105,21 +109,27 @@ main {
     width:     auto;
     max-width: 1360px;
     margin:    0 auto 40px;
-    padding:   62px 7.5px 0;
+    padding:   62px 20px 0;
 }
 
 footer {
     margin:     0;
-    padding:    40px 0;
+    padding:    20px 0;
     text-align: center;
     background: white;
     box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.25);
 
     nav {
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+        justify-content: flex-start;
+        align-items:     flex-start;
+
         a {
-            display:         inline-block;
+            display:         block;
             margin:          0;
-            padding:         0;
+            padding:         20px;
             color:           #aeaeae;
             font-size:       18px;
             line-height:     22px;
@@ -155,6 +165,331 @@ footer {
             height:     18px;
             margin:     0 12px 0 0;
             background: url(/img/icons/arrow-left.png);
+        }
+    }
+}
+
+.search-input-header {
+    display:       block;
+    position:      relative;
+    max-width:     545px;
+    margin:        40px auto;
+    padding:       0;
+    border-bottom: 2px solid #cccccc;
+
+    input[type="search"] {
+        display:     block;
+        width:       100%;
+        padding:     6px 6px 6px 40px;
+        background:  transparent;
+        border:      none;
+        box-shadow:  none;
+        outline:     none;
+        font-size:   16px;
+        line-height: 24px;
+
+        &::-webkit-input-placeholder {
+            color: #cccccc;
+        }
+
+        &:-ms-input-placeholder {
+            color: #cccccc;
+        }
+
+        &::placeholder {
+            color: #cccccc;
+        }
+
+        + .hints {
+            pointer-events: none;
+
+            &:before {
+                transition:          filter 0.15s;
+                content:             '';
+                display:             block;
+                position:            absolute;
+                top:                 0;
+                left:                0;
+                width:               18px;
+                height:              18px;
+                margin:              9px;
+                background-size:     contain;
+                background-image:    url(/img/icons/search.png);
+                background-repeat:   no-repeat;
+                background-position: center center;
+                filter:              grayscale(1) brightness(2);
+            }
+
+            &:after {
+                transition: transform 0.15s;
+                content:    '';
+                display:    block;
+                position:   absolute;
+                top:        100%;
+                left:       0;
+                width:      100%;
+                height:     2px;
+                background: #1e5ca1;
+                transform:  scaleX(0);
+            }
+        }
+
+        &:focus {
+            + .hints {
+                &:before {
+                    filter: grayscale(0) brightness(1);
+                }
+
+                &:after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
+
+.search-form {
+    .form-group {
+        margin: 0 0 15px;
+
+        label {
+            display:     block;
+            margin:      0 0 5px;
+            padding:     0;
+            font-size:   16px;
+            line-height: 21px;
+            font-weight: 500;
+        }
+
+        input[type="text"], input[type="email"], select {
+            display:       block;
+            width:         100%;
+            margin:        0;
+            padding:       8px 10px;
+            background:    white;
+            color:         #4a4a4a;
+            border:        none;
+            box-shadow:    0px 2px 2px rgba(0, 0, 0, 0.15);
+            border-radius: 5px;
+            cursor:        pointer;
+        }
+
+        .range {
+            display:         flex;
+            flex-direction:  row;
+            flex-wrap:       nowrap;
+            justify-content: flex-start;
+            align-items:     flex-start;
+            margin:          0 0 25px;
+            padding:         0;
+
+            span {
+                margin: 0 8px;
+                color:  #999999;
+            }
+        }
+
+        .checkbox {
+            position: relative;
+
+            input[type="checkbox"] {
+                display:        block;
+                position:       absolute;
+                top:            0;
+                left:           0;
+                width:          21px;
+                height:         21px;
+                margin:         0;
+                padding:        0;
+                opacity:        0;
+                pointer-events: none;
+
+                + label {
+                    display:     block;
+                    margin:      0;
+                    padding:     1px 0 1px 30px;
+                    font-size:   15px;
+                    font-weight: 400;
+                    line-height: 21px;
+                    cursor:      pointer;
+
+                    &:before {
+                        content:       '';
+                        display:       block;
+                        position:      absolute;
+                        top:           0;
+                        left:          0;
+                        width:         21px;
+                        height:        21px;
+                        border-radius: 5px;
+                        box-shadow:    0px 2px 2px rgba(0, 0, 0, 0.15);
+                        background:    white;
+                    }
+
+                    &:after {
+                        transition:          opacity 0.15s;
+                        content:             '';
+                        display:             block;
+                        position:            absolute;
+                        top:                 0;
+                        left:                0;
+                        width:               21px;
+                        height:              21px;
+                        background:          url(/img/icons/checkbox.png);
+                        background-repeat:   no-repeat;
+                        background-position: center center;
+                        opacity:             0;
+                    }
+
+                    &:hover {
+                        &:after {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+
+                &:checked {
+                    + label {
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .controls {
+        margin: 30px 0 0;
+
+        button {
+            display:     block;
+            width:       100%;
+            margin:      0 0 10px;
+            padding:     8px;
+            border:      none;
+            outline:     none;
+            box-shadow:  none;
+            font-size:   16px;
+            font-weight: 500;
+            font-family: "Futura PT", sans-serif;
+            line-height: 1.2;
+            cursor:      pointer;
+
+            &[type="submit"] {
+                background:    #1e5ca1;
+                border-radius: 5px;
+                color:         white;
+            }
+
+            &[type="reset"] {
+                background: transparent;
+                color:      #8c8c8c;
+
+                span {
+                    display:       inline-block;
+                    border-bottom: 1px dashed #aaaaaa;
+                }
+            }
+        }
+    }
+
+    .react-datepicker-popper {
+        .react-datepicker {
+            background:    #1e5ca1;
+            border-radius: 5px;
+            border:        none;
+
+            .react-datepicker__navigation {
+                top: 15px;
+
+                &.react-datepicker__navigation--next {
+                    right: auto;
+                    left:  40px;
+                }
+            }
+
+            .react-datepicker__triangle {
+                border-top-color: #1e5ca1;
+            }
+
+            .react-datepicker__month-container {
+                min-height: 275px;
+
+                .react-datepicker__header {
+                    background:  transparent;
+                    border:      none;
+                    padding-top: 12px;
+
+                    .react-datepicker__current-month {
+                        color:       white;
+                        text-align:  right;
+                        font-family: "Futura PT", sans-serif;
+                        padding:     0 0.6rem;
+                        font-size:   16px;
+                        font-weight: 500;
+                    }
+
+                    .react-datepicker__day-names {
+                        position:   relative;
+                        margin-top: 0.6rem;
+
+                        &:before {
+                            content:       '';
+                            display:       block;
+                            position:      absolute;
+                            left:          7px;
+                            right:         7px;
+                            top:           2px;
+                            bottom:        2px;
+                            background:    rgba(255, 255, 255, 0.15);
+                            border-radius: 6px;
+                        }
+
+                        .react-datepicker__day-name {
+                            color:     white;
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .react-datepicker__month {
+                    margin-top: 0;
+
+                    .react-datepicker__week {
+                        .react-datepicker__day {
+                            color:       white;
+                            font-size:   12px;
+                            font-family: "Futura PT", sans-serif;
+                            font-weight: 300;
+
+                            &.react-datepicker__day--keyboard-selected,
+                            &.react-datepicker__month-text--keyboard-selected,
+                            &.react-datepicker__quarter-text--keyboard-selected {
+                                background:  white;
+                                font-weight: 400;
+                                color:       #1e5ca1;
+                            }
+
+                            &:hover {
+                                background: rgba(255, 255, 255, 0.15);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        &[data-placement^="top"] .react-datepicker__triangle,
+        .react-datepicker__year-read-view--down-arrow,
+        .react-datepicker__month-read-view--down-arrow,
+        .react-datepicker__month-year-read-view--down-arrow,
+        &[data-placement^="top"] .react-datepicker__triangle::before,
+        .react-datepicker__year-read-view--down-arrow::before,
+        .react-datepicker__month-read-view--down-arrow::before,
+        .react-datepicker__month-year-read-view--down-arrow::before {
+            border-top-color: #1e5ca1;
         }
     }
 }

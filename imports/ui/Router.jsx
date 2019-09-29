@@ -15,6 +15,8 @@ import PageEmployerList from './Page/Employer/List.jsx';
 import PageEmployerView from './Page/Employer/View.jsx';
 import PagePersonList from './Page/Person/List.jsx';
 import PagePersonView from './Page/Person/View.jsx';
+import PageSpecialtyList from './Page/Specialty/List.jsx';
+import PageSpecialtyView from './Page/Specialty/View.jsx';
 import PieChart from './Chart/Pie/Index.jsx';
 
 class AppRouter extends React.Component {
@@ -87,6 +89,10 @@ class AppRouter extends React.Component {
                             </li>
 
                             <li>
+                                <Link to="/specialty">Специальности</Link>
+                            </li>
+
+                            <li>
                                 <Link to="/education">Учебные заведения</Link>
                             </li>
                         </ul>
@@ -114,6 +120,9 @@ class AppRouter extends React.Component {
 
                         <Route path="/person" exact component={PagePersonList}/>
                         <Route path="/person/view" component={PagePersonView}/>
+
+                        <Route path="/specialty" exact component={PageSpecialtyList}/>
+                        <Route path="/specialty/view" component={PageSpecialtyView}/>
 
                         <Route path="/pie" exact render={() => <PieChart chartData={chartData}/>}/>
                     </Switch>

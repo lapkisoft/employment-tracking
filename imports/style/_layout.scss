@@ -46,6 +46,7 @@ header {
 
             > li {
                 > a {
+                    transition:      background 0.15s;
                     display:         block;
                     position:        relative;
                     margin:          0;
@@ -74,6 +75,10 @@ header {
                         &:after {
                             transform: scaleX(1);
                         }
+                    }
+
+                    &:hover {
+                        background: #f5f5f5;
                     }
                 }
 

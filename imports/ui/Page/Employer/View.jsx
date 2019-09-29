@@ -7,7 +7,16 @@ class PageEmployerView extends React.Component {
     render() {
         return (
             <div>
-                <h1>PageEmployerView</h1>
+                <div className="organization-header">
+                    <div className="img-wrapper">
+                        <img src="/img/employer/rostelecom.png" alt=""/>
+                    </div>
+                    <div className="content">
+                        <h1 className="name">ПАО "РОСТЕЛЕКОМ"</h1>
+                        <h3 className="city">г. Санкт-Петербург</h3>
+                        <h4 className="flow">Текучесть кадров: 2,01%</h4>
+                    </div>
+                </div>
             </div>
         );
     }

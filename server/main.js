@@ -9,6 +9,7 @@ import {Education} from '../imports/api/education.js';
 import myDataCompanies from '../imports/data/companies.json';
 import myDataUsers from '../imports/data/users.json';
 import myDataUniversities from '../imports/data/universities.json';
+import myDataSpecialities from '../imports/data/specialities.json';
 
 Meteor.startup(() => {
     if (Profile.find().count() === 0) {
@@ -23,5 +24,19 @@ Meteor.startup(() => {
             });
         }
         insert(arrayOfDocs.pop(), Profile)
+    }
+
+    if (Specialties.find().count() <= 10) {
+        let arrayOfDocs = myDataSpecialities;
+        const insert = (doc, collection) => {
+            collection.insert(doc, function (error, response) {
+                if(error)
+                    return console.log('Error occurred while inserting');
+        
+                if (arrayOfDocs.length)
+                    insert(arrayOfDocs.pop(), collection);
+            });
+        }
+        insert(arrayOfDocs.pop(), Specialties)
     }
 });

@@ -1,8 +1,15 @@
 import {Meteor} from 'meteor/meteor';
 import React from 'react';
 import {BrowserRouter as Router, Route, NavLink as Link, Switch} from 'react-router-dom';
+import {Specialities} from '../../../api/profile.js';
+import {withTracker} from 'meteor/react-meteor-data';
 
-export default class extends React.Component {
+
+export default withTracker(() => {
+    return {
+        // specialities: Specialities.find({'profile.role': 'Person'}, {limit: 20}).fetch()
+    };
+})(class extends React.Component {
     constructor(props) {
         super(props);
 
@@ -84,4 +91,5 @@ export default class extends React.Component {
             </section>
         );
     }
-}
+});
+
